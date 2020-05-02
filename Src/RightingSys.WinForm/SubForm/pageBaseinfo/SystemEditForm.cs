@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RightingSys.WinForm.SubForm.pageBaseinfo
+namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
     public partial class SystemEditForm :BaseForm
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using RightingSys.WinForm.AppPublic.Enum;
 
-namespace RightingSys.WinForm.SubForm.pageBaseinfo
+namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
     public partial class SystemForm :BaseForm
     {

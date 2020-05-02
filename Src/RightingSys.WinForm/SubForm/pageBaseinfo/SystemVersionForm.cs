@@ -5,7 +5,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml;
 
-namespace RightingSys.WinForm.SubForm.pageBaseinfo
+namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
     public partial class SystemVersionForm : BaseForm
     {

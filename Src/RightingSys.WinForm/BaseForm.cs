@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-using RightingSys.WinForm.AppPublic.Enum;
+﻿using RightingSys.WinForm.AppPublic.Enum;
+using System;
 
 namespace RightingSys.WinForm
 {

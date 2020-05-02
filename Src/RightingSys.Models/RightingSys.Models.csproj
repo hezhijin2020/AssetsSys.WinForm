@@ -63,6 +63,7 @@
     <Compile Include="ys_AssetsStock.cs" />
     <Compile Include="ys_AllotOrder.cs" />
     <Compile Include="ys_AllotOrderDetail.cs" />
+    <Compile Include="ys_RepairOrder.cs" />
     <Compile Include="ys_ReturnOrder.cs" />
     <Compile Include="ys_BorrowOrder.cs" />
     <Compile Include="ys_ReturnOrderDetail.cs" />

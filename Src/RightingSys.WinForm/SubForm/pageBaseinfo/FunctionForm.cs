@@ -6,7 +6,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 
-namespace RightingSys.WinForm.SubForm.pageBaseinfo
+namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
     public partial class FunctionForm :BaseForm
     {

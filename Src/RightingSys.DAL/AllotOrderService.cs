@@ -107,7 +107,8 @@ namespace RightingSys.DAL
            ,[AllotUserId]
            ,[AllotDepartmentId]
            ,[OperatorId]
-           ,[Allotday]
+           ,[Allotday],
+           ,[Location]
            ,[Description]
            ,[IsAudit]
            ,[CreateTime]
@@ -119,6 +120,7 @@ namespace RightingSys.DAL
            ,@AllotDepartmentId
            ,@OperatorId
            ,@Allotday
+           ,@Location
            ,@Description
            ,@IsAudit
            ,@CreateTime
@@ -130,6 +132,7 @@ namespace RightingSys.DAL
             SqlParameter s4 = new SqlParameter("@AllotDepartmentId", model.AllotDepartmentId);
             SqlParameter s6 = new SqlParameter("@OperatorId", model.OperatorId);
             SqlParameter s8 = new SqlParameter("@Allotday", model.Allotday);
+            SqlParameter s9 = new SqlParameter("@Location", model.Location);
             SqlParameter s10 = new SqlParameter("@Description", model.Description);
             SqlParameter s11 = new SqlParameter("@IsAudit", model.IsAudit);
             SqlParameter s12 = new SqlParameter("@CreateTime", model.CreateTime);

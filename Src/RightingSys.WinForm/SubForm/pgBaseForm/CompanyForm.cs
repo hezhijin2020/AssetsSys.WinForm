@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace RightingSys.WinForm.SubForm.pgBaseForm
+namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
 {
     public partial class CompanyForm : BaseForm
     {

@@ -1,4 +1,4 @@
-﻿namespace RightingSys.WinForm.SubForm.pgBaseForm
+﻿namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
 {
     partial class AssetsStockForm
     {

@@ -1,4 +1,4 @@
-﻿namespace RightingSys.WinForm.SubForm.pageBaseinfo
+﻿namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
     partial class UserForm
     {

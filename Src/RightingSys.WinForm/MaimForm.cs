@@ -927,39 +927,39 @@ namespace RightingSys.WinForm
         }
         private void btnAssetsCategory_ItemClick(object sender, ItemClickEventArgs e)
         {
-            MdiShow(new RightingSys.WinForm.SubForm.pgBaseForm.AssetsCategoryForm(), btnAssetsCategory.Tag);
+            MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm.AssetsCategoryForm(), btnAssetsCategory.Tag);
         }
         private void btnRoleSetup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            MdiShow(new RightingSys.WinForm.SubForm.pageBaseinfo.RoleForm(), btnRoleSetup.Tag);
+            MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo.RoleForm(), btnRoleSetup.Tag);
         }
         private void btnFiledRightingSetup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //MdiShow(new RightingSys.WinForm.SubForm.pageBaseinfo.FRole(), btnRoleSetup.Tag);
+            //MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo.FRole(), btnRoleSetup.Tag);
         }
         private void btnBlackIPorUser_ItemClick(object sender, ItemClickEventArgs e)
         {
-           //MdiShow(new RightingSys.WinForm.SubForm.FingerPrint.MealForm(), btnBlackIP.Tag);
+           //MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.FingerPrint.MealForm(), btnBlackIP.Tag);
         }
         private void btnLoginLog_ItemClick(object sender, ItemClickEventArgs e)
         {
-           // MdiShow(new RightingSys.WinForm.SubForm.pageLogs.FLoginLogs(), btnLoginLog .Tag);
+           // MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageLogs.FLoginLogs(), btnLoginLog .Tag);
         }
         private void btnOpLog_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //MdiShow(new RightingSys.WinForm.SubForm.pageLogs.FOprationLogs(), btnOpLog.Tag);
+            //MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageLogs.FOprationLogs(), btnOpLog.Tag);
         }
         private void btnUserSetup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            MdiShow(new RightingSys.WinForm.SubForm.pageBaseinfo.UserForm(), btnCompanySetup.Tag);
+            MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo.UserForm(), btnCompanySetup.Tag);
         }
         private void btnStockSetup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            MdiShow(new RightingSys.WinForm.SubForm.pgBaseForm.AssetsStockForm(), btnStockSetup.Tag);
+            MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm.AssetsStockForm(), btnStockSetup.Tag);
         }
         private void btnSystemSetup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            MdiShow(new RightingSys.WinForm.SubForm.pageBaseinfo.SystemForm(), btnSystemSetup.Tag);
+            MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo.SystemForm(), btnSystemSetup.Tag);
         }
         private void btnCalc_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -1005,12 +1005,12 @@ namespace RightingSys.WinForm
 
         private void btnMenuSetup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //MdiShow(new RightingSys.WinForm.SubForm.FingerPrint.OrderMealAnalysisForm(), btnMenuManager.Tag);
+            //MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.FingerPrint.OrderMealAnalysisForm(), btnMenuManager.Tag);
         }
 
         private void btnCompanySetup_ItemClick(object sender, ItemClickEventArgs e)
         {
-            MdiShow(new RightingSys.WinForm.SubForm.pgBaseForm.CompanyForm(), btnCompanySetup.Tag);
+            MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm.CompanyForm(), btnCompanySetup.Tag);
         }
 
         private void btnAssetsManager_ItemClick(object sender, ItemClickEventArgs e)
@@ -1041,6 +1041,11 @@ namespace RightingSys.WinForm
         private void btnAssetsAllot_ItemClick(object sender, ItemClickEventArgs e)
         {
             MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.AssetsAllotForm(), btnAssetsAllot.Tag);
+        }
+
+        private void btnAssetsRepair_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.AssetsRepairForm(), btnAssetsRepair.Tag);
         }
     }
 }

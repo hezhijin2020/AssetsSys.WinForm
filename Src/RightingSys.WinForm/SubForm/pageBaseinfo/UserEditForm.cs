@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace RightingSys.WinForm.SubForm.pageBaseinfo
+namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
     public partial class UserEditForm : BaseForm
     {

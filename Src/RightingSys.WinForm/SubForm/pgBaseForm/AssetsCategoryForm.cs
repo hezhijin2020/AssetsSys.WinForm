@@ -3,7 +3,7 @@ using RightingSys.WinForm.AppPublic.Enum;
 using System;
 using System.Collections.Generic;
 
-namespace RightingSys.WinForm.SubForm.pgBaseForm
+namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
 {
     public partial class AssetsCategoryForm : BaseForm
     {

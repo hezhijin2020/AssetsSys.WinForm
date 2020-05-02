@@ -238,6 +238,24 @@
     <Compile Include="SubForm\pgAssetsManagerForm\AssetsRefundForm.designer.cs">
       <DependentUpon>AssetsRefundForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairForm.Designer.cs">
+      <DependentUpon>AssetsRepairForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairFinishForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairFinishForm.Designer.cs">
+      <DependentUpon>AssetsRepairFinishForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNew.Designer.cs">
+      <DependentUpon>AssetsRepairAddNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\clsEnum\AssetsStatus.cs" />
     <Compile Include="Utils\clsEnum\FeatureButton.cs" />
     <Compile Include="Utils\cls\clsnet.cs" />
@@ -426,6 +444,15 @@
     <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRefundForm.resx">
       <DependentUpon>AssetsRefundForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairForm.resx">
+      <DependentUpon>AssetsRepairForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairFinishForm.resx">
+      <DependentUpon>AssetsRepairFinishForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNew.resx">
+      <DependentUpon>AssetsRepairAddNew.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubForm\pgBaseForm\AssetsStockForm.resx">
       <DependentUpon>AssetsStockForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -501,7 +528,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SubForm\pageHelper\" />
     <Folder Include="Utils\clsControl\" />
   </ItemGroup>
   <ItemGroup>

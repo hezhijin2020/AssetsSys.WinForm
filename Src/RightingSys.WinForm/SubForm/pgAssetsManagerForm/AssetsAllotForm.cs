@@ -2,7 +2,6 @@
 using RightingSys.WinForm.AppPublic.Enum;
 using System;
 using System.Windows.Forms;
-
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 {
     public partial class AssetsAllotForm : BaseForm

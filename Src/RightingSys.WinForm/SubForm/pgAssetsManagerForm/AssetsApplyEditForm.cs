@@ -46,7 +46,6 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             tApplyday.DateTime = DateTime.Now;
             //仓库选择控件的初始化
             AppPublic.Control.InitalControlHelper.ys_AssetsStock_GridLookUpEdit(cbStock);
-            cbStock.EditValue = 1;//设置默认值
             tEditUser.Text = AppPublic.appSession._FullName;
         }
 
