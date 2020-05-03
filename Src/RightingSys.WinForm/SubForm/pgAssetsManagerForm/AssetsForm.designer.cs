@@ -178,7 +178,7 @@
             this.gridColumn16.FieldName = "Price";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Money", "{0:0.##}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Price", "{0:0.##}")});
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 7;
             // 

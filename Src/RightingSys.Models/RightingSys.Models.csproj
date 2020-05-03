@@ -71,6 +71,7 @@
     <Compile Include="ys_Company.cs" />
     <Compile Include="ys_RefundOrder.cs" />
     <Compile Include="ys_RefundOrderDetail.cs" />
+    <Compile Include="ys_ScrapOrder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

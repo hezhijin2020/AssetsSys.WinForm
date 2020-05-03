@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AllotOrderManager.cs" />
     <Compile Include="BorrowOrderManager.cs" />
+    <Compile Include="ScrapOrderManager.cs" />
     <Compile Include="RepairOrderManager.cs" />
     <Compile Include="ReturnOrderManager.cs" />
     <Compile Include="RefundOrderManager.cs" />
