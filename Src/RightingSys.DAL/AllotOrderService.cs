@@ -84,7 +84,7 @@ namespace RightingSys.DAL
             SqlParameter s1 = new SqlParameter("@Id", model.Id);
             SqlParameter s2 = new SqlParameter("@AllotId", model.AllotId);
             SqlParameter s3 = new SqlParameter("@AssetsId", model.AssetsId);
-            SqlParameter s4 = new SqlParameter("@OldUserName", model.OldUserName);
+            SqlParameter s4 = new SqlParameter("@OldUserName", model.OldUserName==null?"":model.OldUserName);
             SqlParameter s5 = new SqlParameter("@OldUserId", model.OldUserId);
             SqlParameter s6 = new SqlParameter("@OldDepartmentName", model.OldDepartmentName);
             SqlParameter s7 = new SqlParameter("@OldDepartmentId", model.OldDepartmentId);
@@ -107,7 +107,7 @@ namespace RightingSys.DAL
            ,[AllotUserId]
            ,[AllotDepartmentId]
            ,[OperatorId]
-           ,[Allotday],
+           ,[Allotday]
            ,[Location]
            ,[Description]
            ,[IsAudit]
@@ -138,7 +138,7 @@ namespace RightingSys.DAL
             SqlParameter s12 = new SqlParameter("@CreateTime", model.CreateTime);
             SqlParameter s13 = new SqlParameter("@IsRemoved", model.IsRemoved);
 
-            SqlParameter[] cmdPara = new SqlParameter[] { s1, s2, s3, s4,s6, s8, s10, s11,s12,s13};
+            SqlParameter[] cmdPara = new SqlParameter[] { s1, s2, s3, s4,s6, s8,s9, s10, s11,s12,s13};
             sqlDic.Add(cmdPara, sqlText);
 
         }

@@ -30,7 +30,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 
         public override void Query()
         {
-            gcData.DataSource = manager.GetAllList();
+            gcData.DataSource = manager.GetAllTable();
             gvData.BestFitColumns();
         }
 
@@ -38,39 +38,61 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         {
            
         }
-
-      
-
         public override void Print()
         {
            
         }
 
+        /// <summary>
+        /// 双击修改
+        /// </summary>
         private void gvData_MouseDown(object sender, MouseEventArgs e)
         {
-            int R_IsFlag = AppPublic.appPublic.GetIntValue(gvData.GetFocusedRowCellValue("IsFinish"));
-            if (R_IsFlag == 1)
-                return;
-            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo viewInfo = gvData.CalcHitInfo(new Point(e.X, e.Y));
-            if (e.Clicks == 2&&e.Button==MouseButtons.Left)
+            if (!(bool)gvData.GetFocusedRowCellValue("IsFinish"))
             {
-                if (viewInfo.InRow)
+                DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo viewInfo = gvData.CalcHitInfo(new Point(e.X, e.Y));
+                if (e.Clicks == 2 && e.Button == MouseButtons.Left)
                 {
-                    Guid ID = AppPublic.appPublic.GetObjGUID(gvData.GetFocusedRowCellValue("Id"));
-                    AssetsRepairFinishForm sub = new AssetsRepairFinishForm(ID);
-                    if (sub.ShowDialog() == DialogResult.OK)
+                    if (viewInfo.InRow)
                     {
-                        Query();
+                        Guid ID = AppPublic.appPublic.GetObjGUID(gvData.GetFocusedRowCellValue("Id"));
+                        AssetsRepairFinishForm sub = new AssetsRepairFinishForm(ID);
+                        if (sub.ShowDialog() == DialogResult.OK)
+                        {
+                            Query();
+                        }
                     }
                 }
             }
         }
 
+       /// <summary>
+       /// 显示行号
+       /// </summary>
         private void gvData_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
             if (e.RowHandle >= 0)
             {
                 e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
+        }
+        
+
+        /// <summary>
+        /// 自定义单元格样式
+        /// </summary>
+        private void gvData_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if (e.Column.FieldName == "IsFinish")
+            {
+                if (e.CellValue.Equals(true))
+                {
+                    e.Appearance.BackColor = Color.Green;
+                }
+                else
+                {
+                    e.Appearance.BackColor = Color.Red;
+                }
             }
         }
     }

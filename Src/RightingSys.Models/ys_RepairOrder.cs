@@ -89,5 +89,12 @@ namespace RightingSys.Models
         /// 是否完成
         /// </summary>
         public bool IsFinish { get; set; } = false;
+
+        /// <summary>
+        /// 资产状态
+        /// </summary>
+        public  string OldStatusId { get; set; }
+
+        public ys_Assets AssetsModel { get; set; }
     }
 }

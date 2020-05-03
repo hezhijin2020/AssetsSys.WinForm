@@ -112,7 +112,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dBeginday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dBeginday.Size = new System.Drawing.Size(189, 20);
+            this.dBeginday.Size = new System.Drawing.Size(267, 20);
             this.dBeginday.TabIndex = 7;
             // 
             // labelControl5
@@ -141,7 +141,7 @@
             this.cbxAssets.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxAssets.Properties.PopupView = this.gridView3;
-            this.cbxAssets.Size = new System.Drawing.Size(411, 20);
+            this.cbxAssets.Size = new System.Drawing.Size(489, 20);
             this.cbxAssets.TabIndex = 15;
             // 
             // gridView3
@@ -162,7 +162,7 @@
             // sbtnfinish
             // 
             this.sbtnfinish.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbtnfinish.Location = new System.Drawing.Point(349, 309);
+            this.sbtnfinish.Location = new System.Drawing.Point(427, 309);
             this.sbtnfinish.Name = "sbtnfinish";
             this.sbtnfinish.Size = new System.Drawing.Size(66, 21);
             this.sbtnfinish.TabIndex = 2;
@@ -172,7 +172,7 @@
             // sbtnCancel
             // 
             this.sbtnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbtnCancel.Location = new System.Drawing.Point(430, 309);
+            this.sbtnCancel.Location = new System.Drawing.Point(508, 309);
             this.sbtnCancel.Name = "sbtnCancel";
             this.sbtnCancel.Size = new System.Drawing.Size(66, 21);
             this.sbtnCancel.TabIndex = 3;
@@ -185,7 +185,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRepairReason.Location = new System.Drawing.Point(72, 126);
             this.txtRepairReason.Name = "txtRepairReason";
-            this.txtRepairReason.Size = new System.Drawing.Size(411, 20);
+            this.txtRepairReason.Size = new System.Drawing.Size(489, 20);
             this.txtRepairReason.TabIndex = 19;
             // 
             // labelControl4
@@ -221,7 +221,7 @@
             this.panelControl2.Controls.Add(this.txtRepairUser);
             this.panelControl2.Location = new System.Drawing.Point(12, 12);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(491, 291);
+            this.panelControl2.Size = new System.Drawing.Size(569, 291);
             this.panelControl2.TabIndex = 4;
             // 
             // txtWXID
@@ -257,7 +257,7 @@
             this.txtPrice.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtPrice.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtPrice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtPrice.Size = new System.Drawing.Size(91, 20);
+            this.txtPrice.Size = new System.Drawing.Size(169, 20);
             this.txtPrice.TabIndex = 21;
             // 
             // labelControl8
@@ -275,11 +275,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRepairDescription.Location = new System.Drawing.Point(72, 154);
             this.txtRepairDescription.Name = "txtRepairDescription";
-            this.txtRepairDescription.Size = new System.Drawing.Size(411, 121);
+            this.txtRepairDescription.Size = new System.Drawing.Size(489, 121);
             this.txtRepairDescription.TabIndex = 23;
             // 
             // txtOperatorUser
             // 
+            this.txtOperatorUser.Enabled = false;
             this.txtOperatorUser.Location = new System.Drawing.Point(72, 42);
             this.txtOperatorUser.Name = "txtOperatorUser";
             this.txtOperatorUser.Size = new System.Drawing.Size(157, 20);
@@ -292,14 +293,14 @@
             this.txtRepairUser.Location = new System.Drawing.Point(294, 42);
             this.txtRepairUser.Name = "txtRepairUser";
             this.txtRepairUser.Properties.NullText = "[EditValue is null]";
-            this.txtRepairUser.Size = new System.Drawing.Size(190, 20);
+            this.txtRepairUser.Size = new System.Drawing.Size(268, 20);
             this.txtRepairUser.TabIndex = 6;
             // 
             // AssetsRepairFinishForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(515, 338);
+            this.ClientSize = new System.Drawing.Size(593, 338);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.sbtnCancel);
             this.Controls.Add(this.sbtnfinish);

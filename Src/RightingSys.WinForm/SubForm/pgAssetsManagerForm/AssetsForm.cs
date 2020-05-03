@@ -135,6 +135,37 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             }
         }
 
+        /// <summary>
+        ///  根据状态自定义样试
+        /// </summary>
+        private void gvData_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            if(e.Column.FieldName== "StatusName")
+            {
+              
+                switch (e.CellValue)
+                {
+                    case "闲置":
+                        e.Appearance.BackColor = Color.Gray;
+                        break;
+                    case "在用":
+                        e.Appearance.BackColor =Color.Green;
+                        break;
+                    case "借用":
+                        e.Appearance.BackColor = Color.Orange;
+                        break;
+                    case "维修":
+                        e.Appearance.BackColor = Color.Red;
+                        break;
+                    case "报废":
+                        e.Appearance.BackColor =Color.SeaGreen ;
+                        break;
+                    default:
+                        break;
+                }
+               
 
+            }
+        }
     }
 }

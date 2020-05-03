@@ -68,6 +68,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 cbxAsset.EditValue = null;
 
                 #region
+
                 Models.ys_RepairOrder m = new Models.ys_RepairOrder();
                 m.Id = Guid.NewGuid();
                 m.AssetsId = model.Id;
@@ -81,6 +82,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 m.RepairReason = txtRepairReason.Text;
                 m.RepairUserId = AppPublic.appPublic.GetObjGUID(cbxRepairUser.EditValue);
                 m.RepairUserName = cbxRepairUser.Text;
+                m.OldStatusId = model.StatusId;
+                m.AssetsModel = model;
 
                 #endregion
                 selectview.Add(m);
@@ -95,9 +98,9 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 
         private void sbtnDelete_Click(object sender, EventArgs e)
         {
-            if (gvData.FocusedRowHandle>0)
+            if (gvData.FocusedRowHandle>=0)
             {
-                Models.ys_RepairOrder model = selectview.Find(s => s.AssetsId.Equals(gvData.GetFocusedRowCellValue("Id")));
+                Models.ys_RepairOrder model = selectview.Find(s => s.AssetsId.Equals(gvData.GetFocusedRowCellValue("AssetsId")));
                 selectview.Remove(model);
                 gcData.RefreshDataSource();
                 cbxAsset.EditValue = null;

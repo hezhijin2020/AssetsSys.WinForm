@@ -41,7 +41,7 @@ namespace RightingSys.BLL
         /// <returns></returns>
         public bool Modify(Models.ys_RepairOrder model)
         {
-            return sev.Modify(model);
+            return sev.Modify(new List<Models.ys_RepairOrder> { model});
         }
 
         /// <summary>
@@ -91,6 +91,16 @@ namespace RightingSys.BLL
         }
 
         /// <summary>
+        /// 根据订单号获取维修信息
+        /// </summary>
+        /// <param name="RepairNo">订单号</param>
+        /// <returns></returns>
+        public DataTable GetTableOneByRepairNo(string RepairNo)
+        {
+            return sev.GetTableOneByRepairNo(RepairNo);
+        }
+
+        /// <summary>
         /// 获取所有的维修订单
         /// </summary>
         /// <returns></returns>
@@ -99,5 +109,14 @@ namespace RightingSys.BLL
             return sev.GetAllList().ToList();
         }
 
+
+        /// <summary>
+        /// 获取所有的维修订单
+        /// </summary>
+        /// <returns></returns>
+        public System.Data.DataTable GetAllTable()
+        {
+            return sev.GetAllTable();
+        }
     }
 }

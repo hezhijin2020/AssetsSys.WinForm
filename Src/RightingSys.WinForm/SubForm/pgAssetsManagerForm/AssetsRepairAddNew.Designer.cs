@@ -109,7 +109,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(299, 13);
+            this.labelControl3.Location = new System.Drawing.Point(311, 13);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(48, 14);
             this.labelControl3.TabIndex = 23;
@@ -120,12 +120,12 @@
             this.cbxCompany.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cbxCompany.EditValue = "";
-            this.cbxCompany.Location = new System.Drawing.Point(353, 10);
+            this.cbxCompany.Location = new System.Drawing.Point(365, 10);
             this.cbxCompany.Name = "cbxCompany";
             this.cbxCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cbxCompany.Properties.PopupView = this.gridView1;
-            this.cbxCompany.Size = new System.Drawing.Size(155, 20);
+            this.cbxCompany.Size = new System.Drawing.Size(143, 20);
             this.cbxCompany.TabIndex = 21;
             // 
             // gridView1
@@ -164,7 +164,7 @@
             this.tRepairday.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.tRepairday.Properties.TodayDate = new System.DateTime(2019, 12, 17, 11, 22, 45, 0);
-            this.tRepairday.Size = new System.Drawing.Size(85, 20);
+            this.tRepairday.Size = new System.Drawing.Size(97, 20);
             this.tRepairday.TabIndex = 7;
             // 
             // cbxRepairUser
@@ -312,7 +312,7 @@
             // gridColumn2
             // 
             this.gridColumn2.Caption = "名称";
-            this.gridColumn2.FieldName = "Name";
+            this.gridColumn2.FieldName = "AssetsModel.Name";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
@@ -320,7 +320,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "条码";
-            this.gridColumn3.FieldName = "Barcode";
+            this.gridColumn3.FieldName = "AssetsModel.Barcode";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
@@ -336,7 +336,7 @@
             // gridColumn1
             // 
             this.gridColumn1.Caption = "费用";
-            this.gridColumn1.FieldName = "Price";
+            this.gridColumn1.FieldName = "RepairPrice";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 5;
@@ -344,7 +344,7 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "型号";
-            this.gridColumn4.FieldName = "Model";
+            this.gridColumn4.FieldName = "AssetsModel.Model";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
@@ -352,7 +352,7 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "部门";
-            this.gridColumn5.FieldName = "DepartmentName";
+            this.gridColumn5.FieldName = "AssetsModel.DepartmentName";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
@@ -360,7 +360,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "人员";
-            this.gridColumn6.FieldName = "UserName";
+            this.gridColumn6.FieldName = "AssetsModel.UserName";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;

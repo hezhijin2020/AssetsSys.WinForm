@@ -48,12 +48,17 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 
                 model.FinishUserName = AppPublic.appSession._FullName;
                 model.FinishUserId = AppPublic.appSession._UserId;
+                model.Finishday = DateTime.Now;
+                model.IsFinish = true;
 
                 model.RepairPrice = AppPublic.appPublic.ToDecimal(txtPrice.Text);
                 model.CompanyId = AppPublic.appPublic.GetObjGUID(cbxCompany.EditValue);
 
+               
+
                 if (manager.Modify(model))
                 {
+                    MessageBox.Show("成功.", Text);
                     base.DialogResult = DialogResult.OK;
                 }
                 else

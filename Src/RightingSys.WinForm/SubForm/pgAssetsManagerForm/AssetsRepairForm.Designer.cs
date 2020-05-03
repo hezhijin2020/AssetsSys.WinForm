@@ -31,6 +31,7 @@
             this.gcData = new DevExpress.XtraGrid.GridControl();
             this.gvData = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.Band_Require = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridColumn19 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -52,7 +53,6 @@
             this.gridColumn16 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridColumn19 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gcData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvData)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +65,7 @@
             this.gcData.Location = new System.Drawing.Point(12, 12);
             this.gcData.MainView = this.gvData;
             this.gcData.Name = "gcData";
-            this.gcData.Size = new System.Drawing.Size(685, 134);
+            this.gcData.Size = new System.Drawing.Size(685, 259);
             this.gcData.TabIndex = 0;
             this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvData});
@@ -107,11 +107,13 @@
             this.gvData.OptionsView.EnableAppearanceOddRow = true;
             this.gvData.OptionsView.ShowGroupPanel = false;
             this.gvData.CustomDrawRowIndicator += new DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventHandler(this.gvData_CustomDrawRowIndicator);
+            this.gvData.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvData_CustomDrawCell);
             this.gvData.MouseDown += new System.Windows.Forms.MouseEventHandler(this.gvData_MouseDown);
             // 
             // Band_Require
             // 
             this.Band_Require.Caption = "订单信息";
+            this.Band_Require.Columns.Add(this.gridColumn19);
             this.Band_Require.Columns.Add(this.gridColumn2);
             this.Band_Require.Columns.Add(this.gridColumn3);
             this.Band_Require.Columns.Add(this.gridColumn4);
@@ -125,7 +127,15 @@
             this.Band_Require.Fixed = DevExpress.XtraGrid.Columns.FixedStyle.Left;
             this.Band_Require.Name = "Band_Require";
             this.Band_Require.VisibleIndex = 0;
-            this.Band_Require.Width = 750;
+            this.Band_Require.Width = 825;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "是否完成";
+            this.gridColumn19.FieldName = "IsFinish";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn19.Visible = true;
             // 
             // gridColumn2
             // 
@@ -194,7 +204,7 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "原因";
-            this.gridColumn7.FieldName = "RepairS";
+            this.gridColumn7.FieldName = "RepairReason";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn7.OptionsColumn.AllowMove = false;
@@ -212,7 +222,7 @@
             // gridColumn8
             // 
             this.gridColumn8.Caption = "说明";
-            this.gridColumn8.FieldName = "Description";
+            this.gridColumn8.FieldName = "RepairDescription";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn8.Visible = true;
@@ -230,15 +240,14 @@
             this.Band_RequireDetail.Columns.Add(this.gridColumn16);
             this.Band_RequireDetail.Columns.Add(this.gridColumn17);
             this.Band_RequireDetail.Columns.Add(this.gridColumn18);
-            this.Band_RequireDetail.Columns.Add(this.gridColumn19);
             this.Band_RequireDetail.Name = "Band_RequireDetail";
             this.Band_RequireDetail.VisibleIndex = 1;
-            this.Band_RequireDetail.Width = 825;
+            this.Band_RequireDetail.Width = 750;
             // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "名称";
-            this.gridColumn10.FieldName = "FullName";
+            this.gridColumn10.FieldName = "Name";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn10.OptionsColumn.AllowMove = false;
@@ -268,7 +277,7 @@
             // gridColumn13
             // 
             this.gridColumn13.Caption = "类别";
-            this.gridColumn13.FieldName = "TypeName";
+            this.gridColumn13.FieldName = "CategoryName";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn13.OptionsColumn.AllowMove = false;
@@ -286,7 +295,7 @@
             // gridColumn14
             // 
             this.gridColumn14.Caption = "部门";
-            this.gridColumn14.FieldName = "DeptName";
+            this.gridColumn14.FieldName = "DepartmentName";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn14.OptionsColumn.AllowMove = false;
@@ -296,7 +305,7 @@
             // gridColumn15
             // 
             this.gridColumn15.Caption = "人员";
-            this.gridColumn15.FieldName = "StaffName";
+            this.gridColumn15.FieldName = "UserName";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn15.OptionsColumn.AllowMove = false;
@@ -333,19 +342,11 @@
             this.gridColumn18.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn18.Visible = true;
             // 
-            // gridColumn19
-            // 
-            this.gridColumn19.Caption = "状态";
-            this.gridColumn19.FieldName = "IsFinish";
-            this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.gridColumn19.Visible = true;
-            // 
             // AssetsRepairForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 158);
+            this.ClientSize = new System.Drawing.Size(709, 283);
             this.Controls.Add(this.gcData);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AssetsRepairForm";
