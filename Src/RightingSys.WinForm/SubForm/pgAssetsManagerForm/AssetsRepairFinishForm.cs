@@ -13,11 +13,21 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         BLL.RepairOrderManager manager = new BLL.RepairOrderManager();
 
         #endregion
+
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="Id"></param>
         public AssetsRepairFinishForm(Guid Id)
         {
             InitializeComponent();
             Initial(Id);
         }
+
+        /// <summary>
+        /// 初始化方法
+        /// </summary>
+        /// <param name="Id"></param>
         private void Initial(Guid Id)
         {
             AppPublic.Control.InitalControlHelper.ys_Company_GridLookUpEdit(cbxCompany);
@@ -35,10 +45,17 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             cbxAssets.EditValue = model.AssetsId;
             
         }
+       /// <summary>
+       ///取消修改
+       /// </summary>
         private void sbtnCancel_Click(object sender, EventArgs e)
         {
             base.DialogResult = DialogResult.Cancel;
         }
+
+        /// <summary>
+        /// 完成修改记录状态
+        /// </summary>
         private void sbtnfinish_Click(object sender, EventArgs e)
         {
             if (txtRepairDescription.Text.Trim() != "" && txtRepairReason.Text.Trim() != "")
@@ -53,9 +70,6 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 
                 model.RepairPrice = AppPublic.appPublic.ToDecimal(txtPrice.Text);
                 model.CompanyId = AppPublic.appPublic.GetObjGUID(cbxCompany.EditValue);
-
-               
-
                 if (manager.Modify(model))
                 {
                     MessageBox.Show("成功.", Text);

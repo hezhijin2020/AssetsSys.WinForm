@@ -65,7 +65,7 @@
             this.gcData.Location = new System.Drawing.Point(12, 12);
             this.gcData.MainView = this.gvData;
             this.gcData.Name = "gcData";
-            this.gcData.Size = new System.Drawing.Size(685, 259);
+            this.gcData.Size = new System.Drawing.Size(640, 142);
             this.gcData.TabIndex = 0;
             this.gcData.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvData});
@@ -134,7 +134,7 @@
             this.gridColumn19.Caption = "是否完成";
             this.gridColumn19.FieldName = "IsFinish";
             this.gridColumn19.Name = "gridColumn19";
-            this.gridColumn19.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn19.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn19.Visible = true;
             // 
             // gridColumn2
@@ -142,9 +142,8 @@
             this.gridColumn2.Caption = "单号";
             this.gridColumn2.FieldName = "RepairNo";
             this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn2.OptionsColumn.AllowMove = false;
-            this.gridColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn2.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn2.Visible = true;
             // 
             // gridColumn3
@@ -152,9 +151,8 @@
             this.gridColumn3.Caption = "报修人员";
             this.gridColumn3.FieldName = "RepairUserName";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn3.OptionsColumn.AllowMove = false;
-            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn3.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn3.Visible = true;
             // 
             // gridColumn4
@@ -162,9 +160,8 @@
             this.gridColumn4.Caption = "送修时间";
             this.gridColumn4.FieldName = "Repairday";
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn4.OptionsColumn.AllowMove = false;
-            this.gridColumn4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn4.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn4.Visible = true;
             // 
             // gridColumn5
@@ -172,9 +169,8 @@
             this.gridColumn5.Caption = "送修人";
             this.gridColumn5.FieldName = "OperatorName";
             this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn5.OptionsColumn.AllowMove = false;
-            this.gridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn5.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn5.Visible = true;
             // 
             // gridColumn6
@@ -182,7 +178,7 @@
             this.gridColumn6.Caption = "维修单位";
             this.gridColumn6.FieldName = "CompanyName";
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn6.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn6.Visible = true;
             // 
             // gridColumn21
@@ -190,7 +186,7 @@
             this.gridColumn21.Caption = "接收人";
             this.gridColumn21.FieldName = "FinishUserName";
             this.gridColumn21.Name = "gridColumn21";
-            this.gridColumn21.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn21.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn21.Visible = true;
             // 
             // gridColumn20
@@ -198,7 +194,7 @@
             this.gridColumn20.Caption = "接收时间";
             this.gridColumn20.FieldName = "Finishday";
             this.gridColumn20.Name = "gridColumn20";
-            this.gridColumn20.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn20.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn20.Visible = true;
             // 
             // gridColumn7
@@ -206,9 +202,8 @@
             this.gridColumn7.Caption = "原因";
             this.gridColumn7.FieldName = "RepairReason";
             this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn7.OptionsColumn.AllowMove = false;
-            this.gridColumn7.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn7.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn7.Visible = true;
             // 
             // gridColumn9
@@ -216,7 +211,7 @@
             this.gridColumn9.Caption = "维修费用";
             this.gridColumn9.FieldName = "RepairPrice";
             this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn9.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn9.Visible = true;
             // 
             // gridColumn8
@@ -224,7 +219,7 @@
             this.gridColumn8.Caption = "说明";
             this.gridColumn8.FieldName = "RepairDescription";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.gridColumn8.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
             this.gridColumn8.Visible = true;
             // 
             // Band_RequireDetail
@@ -346,7 +341,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 283);
+            this.ClientSize = new System.Drawing.Size(664, 166);
             this.Controls.Add(this.gcData);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AssetsRepairForm";

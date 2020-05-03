@@ -166,6 +166,12 @@
     <Compile Include="DevReport\rptAllotOrder.Designer.cs">
       <DependentUpon>rptAllotOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevReport\rptRepairOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptRepairOrder.Designer.cs">
+      <DependentUpon>rptRepairOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevReport\rptBorrowOrder.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -395,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DevReport\rptAllotOrder.resx">
       <DependentUpon>rptAllotOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptRepairOrder.resx">
+      <DependentUpon>rptRepairOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevReport\rptBorrowOrder.resx">
       <DependentUpon>rptBorrowOrder.cs</DependentUpon>

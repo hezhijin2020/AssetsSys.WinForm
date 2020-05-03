@@ -19,6 +19,9 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             base.SetFeatureButton(FeatureButton.Add, FeatureButton.Query,FeatureButton.Export,FeatureButton.Print);
         }
 
+        /// <summary>
+        /// 新增订单
+        /// </summary>
         public override void AddNew()
         {
             AssetsRepairAddNew sub = new AssetsRepairAddNew();
@@ -28,19 +31,44 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             }
         }
 
+        /// <summary>
+        /// 查询记录
+        /// </summary>
         public override void Query()
         {
             gcData.DataSource = manager.GetAllTable();
             gvData.BestFitColumns();
         }
 
+        /// <summary>
+        /// 导出订单信息
+        /// </summary>
         public override void Export()
         {
-           
+            SaveFileDialog fileDialog = new SaveFileDialog();
+            fileDialog.Title = "导出Excel";
+            fileDialog.Filter = "Excel文件(*.xls)|*.xls";
+            fileDialog.FileName = "资产维修信息";
+            DialogResult dialogResult = fileDialog.ShowDialog(this);
+            if (dialogResult == DialogResult.OK)
+            {
+                DevExpress.XtraPrinting.XlsExportOptions options = new DevExpress.XtraPrinting.XlsExportOptions();
+                gcData.ExportToXls(fileDialog.FileName);
+                DevExpress.XtraEditors.XtraMessageBox.Show("保存成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
+
+        /// <summary>
+        /// 打印订单
+        /// </summary>
         public override void Print()
         {
-           
+            if (gvData.FocusedRowHandle >= 0)
+            {
+                var RepairNo = gvData.GetFocusedRowCellValue("RepairNo").ToString();
+                DevReport.rptRepairOrder rpt = new DevReport.rptRepairOrder(RepairNo);
+                rpt.ShowPreview();
+            }
         }
 
         /// <summary>
