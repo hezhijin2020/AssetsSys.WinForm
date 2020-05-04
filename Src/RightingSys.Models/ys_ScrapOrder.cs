@@ -60,6 +60,7 @@ namespace RightingSys.Models
         /// </summary>
         public bool IsAudit { get; set; }
 
+        public ys_Assets AssetsModel { get; set; }
 
     }
 }

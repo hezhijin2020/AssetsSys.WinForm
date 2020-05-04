@@ -1,6 +1,6 @@
 ﻿namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 {
-    partial class AssetsRepairAddNew
+    partial class AssetsRepairAddNewForm
     {
         /// <summary>
         /// Required designer variable.

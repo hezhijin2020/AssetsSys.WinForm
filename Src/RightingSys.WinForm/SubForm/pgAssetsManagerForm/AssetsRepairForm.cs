@@ -24,7 +24,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         /// </summary>
         public override void AddNew()
         {
-            AssetsRepairAddNew sub = new AssetsRepairAddNew();
+            AssetsRepairAddNewForm sub = new AssetsRepairAddNewForm();
             if (sub.ShowDialog() == DialogResult.OK)
             {
                 Query();

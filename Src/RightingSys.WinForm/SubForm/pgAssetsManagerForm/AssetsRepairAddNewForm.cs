@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 {
-    public partial class AssetsRepairAddNew : BaseForm
+    public partial class AssetsRepairAddNewForm : BaseForm
     {
 
         #region  声明变量
@@ -15,7 +15,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         BLL.RepairOrderManager manager = new BLL.RepairOrderManager();
         #endregion
 
-        public AssetsRepairAddNew()
+        public AssetsRepairAddNewForm()
         {
             InitializeComponent();
             Initial();

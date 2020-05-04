@@ -256,11 +256,23 @@
     <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairFinishForm.Designer.cs">
       <DependentUpon>AssetsRepairFinishForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNew.cs">
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNew.Designer.cs">
-      <DependentUpon>AssetsRepairAddNew.cs</DependentUpon>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNewForm.Designer.cs">
+      <DependentUpon>AssetsRepairAddNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapForm.Designer.cs">
+      <DependentUpon>AssetsScrapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapAddNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapAddNewForm.Designer.cs">
+      <DependentUpon>AssetsScrapAddNewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\clsEnum\AssetsStatus.cs" />
     <Compile Include="Utils\clsEnum\FeatureButton.cs" />
@@ -459,8 +471,14 @@
     <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairFinishForm.resx">
       <DependentUpon>AssetsRepairFinishForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNew.resx">
-      <DependentUpon>AssetsRepairAddNew.cs</DependentUpon>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNewForm.resx">
+      <DependentUpon>AssetsRepairAddNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsScrapForm.resx">
+      <DependentUpon>AssetsScrapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsScrapAddNewForm.resx">
+      <DependentUpon>AssetsScrapAddNewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\pgBaseForm\AssetsStockForm.resx">
       <DependentUpon>AssetsStockForm.cs</DependentUpon>
