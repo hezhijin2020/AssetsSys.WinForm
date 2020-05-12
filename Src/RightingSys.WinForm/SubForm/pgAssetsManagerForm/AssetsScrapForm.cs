@@ -13,11 +13,16 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             Query();
         }
 
+        /// <summary>
+        /// 初始化工具菜单
+        /// </summary>
         public override void InitFeatureButton()
         {
-            base.SetFeatureButton(FeatureButton.Add,FeatureButton.Query,FeatureButton.Export,FeatureButton.Preview,FeatureButton.Print);
+            base.SetFeatureButton(FeatureButton.Add,FeatureButton.Query,FeatureButton.Export,FeatureButton.Print);
         }
-
+        /// <summary>
+        /// 新增报废单
+        /// </summary>
         public override void AddNew()
         {
             AssetsScrapAddNewForm sub = new AssetsScrapAddNewForm();
@@ -27,29 +32,33 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             }
         }
 
+        /// <summary>
+        /// 查询报废单信息
+        /// </summary>
         public override void Query()
         {
             gcData.DataSource = bll.GetAllTable();
             gvData.BestFitColumns();
         }
 
+        /// <summary>
+        /// 导出查询信息
+        /// </summary>
         public override void Export()
         {
-           // AppPublic.appPublic.DevExprot(gcData);
+            AppPublic.appPublic.DevExprot(gcData);
         }
 
-        public override void Preview()
-        {
-            //AppPublic.appPublic.DevPreview(gcData, "资产清理单",true);
-        }
-
+        /// <summary>
+        /// 打印报废单
+        /// </summary>
         public override void Print()
         {
-            object  BFID = gvData.GetFocusedRowCellValue( "BFID");
-            if (BFID != null && gvData.FocusedRowHandle >= 0)
+            object  ScrapNo = gvData.GetFocusedRowCellValue("ScrapNo");
+            if (ScrapNo != null && gvData.FocusedRowHandle >= 0)
             {
-                //AppPublic.Report.rep_Bforder repbf = new AppPublic.Report.rep_Bforder(BFID.ToString());
-                //repbf.ShowPreview();
+                DevReport.rptScrapOrder rpt = new DevReport.rptScrapOrder(ScrapNo.ToString());
+                rpt.ShowPreview();
             }
         }
     }

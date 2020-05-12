@@ -416,33 +416,33 @@ namespace RightingSys.WinForm
 
         #region 系统右下角状态栏提示控件 （NotifyIcon）相关方法
 
-        /* 关闭子窗体时数据是否保存
-         * public void SetDontAlertWhenExit(bool Val)
-        {
-            this.DontAlertWhenExit = Val;
-            if (this.DontAlertWhenExit)
-            {
-                System.Windows.Forms.Form[] mdiChildren = base.MdiChildren;
-                for (int i = 0; i < mdiChildren.Length; i++)
-                {
-                    System.Windows.Forms.Form form = mdiChildren[i];
-                }
-            }
-        }
-        public bool GetDontAlertWhenExit()
-        {
-            return this.DontAlertWhenExit;
-        }
-        */
+        //关闭子窗体时数据是否保存
+        //public void SetDontAlertWhenExit(bool Val)
+        //{
+        //    this.DontAlertWhenExit = Val;
+        //    if (this.DontAlertWhenExit)
+        //    {
+        //        System.Windows.Forms.Form[] mdiChildren = base.MdiChildren;
+        //        for (int i = 0; i < mdiChildren.Length; i++)
+        //        {
+        //            System.Windows.Forms.Form form = mdiChildren[i];
+        //        }
+        //    }
+        //}
+        //public bool GetDontAlertWhenExit()
+        //{
+        //    return this.DontAlertWhenExit;
+        //}
 
-        private void ntyAlert_BalloonTipClicked(object sender, System.EventArgs e)
-        {
-            // appPublic.ExecuteNoException(new dele_SimpleDo(this.doOpenAlert));
-        }
-        private void ntyAlert_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
-        {
-            //appPublic.ExecuteNoException(new dele_SimpleDo(this.doOpenAlert));
-        }
+
+        //private void ntyAlert_BalloonTipClicked(object sender, System.EventArgs e)
+        //{
+        //    appPublic.ExecuteNoException(new dele_SimpleDo(this.doOpenAlert));
+        //}
+        //private void ntyAlert_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        //{
+        //    appPublic.ExecuteNoException(new dele_SimpleDo(this.doOpenAlert));
+        //}
         public void ShowAlertInfo(string Title, string Text, System.Windows.Forms.ToolTipIcon IconType)
         {
             this.ntyAlert.ShowBalloonTip(this.AlertHoldTime * 1000, Title, Text, IconType);
@@ -807,7 +807,6 @@ namespace RightingSys.WinForm
                 this.btnAbout.Visibility = BarItemVisibility.Always;
                 this.btnCalc.Visibility = BarItemVisibility.Always;
                 this.btnNotepad.Visibility = BarItemVisibility.Always;
-                this.btnstikynot.Visibility = BarItemVisibility.Always;
                 this.pageEditor.Visible = false;
 
                 if (this.LoginForm != null)
@@ -1046,6 +1045,11 @@ namespace RightingSys.WinForm
         private void btnAssetsRepair_ItemClick(object sender, ItemClickEventArgs e)
         {
             MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.AssetsRepairForm(), btnAssetsRepair.Tag);
+        }
+
+        private void btnAssetsScrap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.AssetsScrapForm(), btnAssetsScrap.Tag);
         }
     }
 }

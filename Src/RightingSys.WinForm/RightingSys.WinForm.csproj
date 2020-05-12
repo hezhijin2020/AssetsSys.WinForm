@@ -160,6 +160,12 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevReport\rptScrapOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptScrapOrder.Designer.cs">
+      <DependentUpon>rptScrapOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevReport\rptAllotOrder.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -410,6 +416,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptScrapOrder.resx">
+      <DependentUpon>rptScrapOrder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DevReport\rptAllotOrder.resx">
       <DependentUpon>rptAllotOrder.cs</DependentUpon>

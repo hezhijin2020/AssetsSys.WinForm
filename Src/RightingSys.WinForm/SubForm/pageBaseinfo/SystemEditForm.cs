@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
@@ -30,7 +24,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
             txtRemark.Text = model.SystemDescription;
         }
 
-        public bool Save()
+        public  bool bnSave()
         {
             bool count = false;
             if (txtsysName.Text.Trim()=="")
@@ -70,7 +64,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 
         private void btnNewAdd_Click(object sender, EventArgs e)
         {
-            if (Save())
+            if (bnSave())
             {
                 txtsysID.Text = "";
                 txtsysName.Text = "";
@@ -82,7 +76,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Save())
+            if (bnSave())
             {
                 DialogResult = DialogResult.OK;
             }

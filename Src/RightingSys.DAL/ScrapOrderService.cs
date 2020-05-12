@@ -43,12 +43,12 @@ namespace RightingSys.DAL
            ,[ScrapNo]
            ,[AssetsId]
            ,[OldStatusId]
-           ,[SrcapUserId]
-           ,[SrcapUserName]
+           ,[ScrapUserId]
+           ,[ScrapUserName]
            ,[Scrapday]
            ,[OperatorId]
            ,[OperatorName]
-           ,[SrcapDescription]
+           ,[ScrapDescription]
            ,[IsAudit]
            ,[CreateTime]
            ,[IsRemoved])
@@ -56,12 +56,12 @@ namespace RightingSys.DAL
            ,@ScrapNo
            ,@AssetsId
            ,@OldStatusId
-           ,@SrcapUserId
-           ,@SrcapUserName
+           ,@ScrapUserId
+           ,@ScrapUserName
            ,@Scrapday
            ,@OperatorId
            ,@OperatorName
-           ,@SrcapDescription
+           ,@ScrapDescription
            ,@IsAudit
            ,@CreateTime
            ,@IsRemoved)";
@@ -92,10 +92,11 @@ namespace RightingSys.DAL
         /// <param name="model"></param>
         public void AddDicByUpdateAssets(Models.ys_ScrapOrder model)
         {
-            if (model.IsAudit)
+            if (!model.IsAudit)
             {
                 string sqlText = @"UPDATE [AssetsSys].[dbo].[ys_Assets]
                     SET [StatusId] = @StatusId
+                       ,[IsRemoved]=0
                         WHERE [Id] = @Id";
                 SqlParameter s1 = new SqlParameter("@Id", model.AssetsId);
                 SqlParameter s2 = new SqlParameter("@StatusId", model.OldStatusId);
@@ -106,6 +107,7 @@ namespace RightingSys.DAL
             {
                 string sqlText = @"UPDATE [AssetsSys].[dbo].[ys_Assets]
                     SET [StatusId] = @StatusId
+                       ,[IsRemoved]=1
                         WHERE [Id] = @Id";
                 SqlParameter s1 = new SqlParameter("@Id", model.AssetsId);
                 SqlParameter s2 = new SqlParameter("@StatusId", "BF");
@@ -145,12 +147,12 @@ namespace RightingSys.DAL
                    SET [ScrapNo] = @ScrapNo
                       ,[AssetsId] = @AssetsId
                       ,[OldStatusId] = @OldStatusId
-                      ,[SrcapUserId] = @SrcapUserId
-                      ,[SrcapUserName] = @SrcapUserName
+                      ,[ScrapUserId] = @ScrapUserId
+                      ,[ScrapUserName] = @ScrapUserName
                       ,[Scrapday] = @Scrapday
                       ,[OperatorId] = @OperatorId
                       ,[OperatorName] = @OperatorName
-                      ,[SrcapDescription] = @SrcapDescription
+                      ,[ScrapDescription] = @SrcapDescription
                       ,[IsAudit] = @IsAudit
                       ,[CreateTime] = @CreateTime
                       ,[IsRemoved] = @IsRemoved

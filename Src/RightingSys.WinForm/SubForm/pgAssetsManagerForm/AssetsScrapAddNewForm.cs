@@ -8,21 +8,20 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 {
     public partial class AssetsScrapAddNewForm : BaseForm
     {
+        #region  声明变量
+        List<Models.ys_Assets> AllAssets = null;//资产控件的数据集
+        List<Models.ys_Assets> selectAssets = new List<Models.ys_Assets>();//选择资产的数据集
+        
+        BLL.ScrapOrderManager bll = new BLL.ScrapOrderManager();//领用资产的业务类实列化
+        #endregion
+
         public AssetsScrapAddNewForm()
         {
             InitializeComponent();
             Initial();
         }
 
-        #region  声明变量
-        List<Models.ACL_User> aCL_Users = new List<Models.ACL_User>();//职员的控件的数据集
-        List<Models.ys_Assets> ListAsset = null;//资产控件的数据集
-        List<Models.ys_ScrapOrder> SelectListAsset = new List<Models.ys_ScrapOrder>();//选择资产的数据集
-
-        Models.ys_ScrapOrder model = new Models.ys_ScrapOrder(); //领用资产的数据模型
-        BLL.ScrapOrderManager bll = new BLL.ScrapOrderManager();//领用资产的业务类实列化
-        BLL.AssetsManager assetsManager = new BLL.AssetsManager();
-        #endregion
+     
 
         /// <summary>
         /// 窗体的及控件的初始化
@@ -30,26 +29,21 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         private void Initial()
         {
            //职员信息的初始化
-            AppPublic.Control.InitalControlHelper.ACL_User_GridLookUpEdit(StaffID, false);
-            StaffID.Properties.DataSource = aCL_Users = AppPublic.Control.InitalControlHelper.GetAllUser();
-           //部门信息的初始化
-            AppPublic.Control.InitalControlHelper.ACL_Department_TreeListLookUpEdit(tl_Dept);
+            AppPublic.Control.InitalControlHelper.ACL_User_GridLookUpEdit(StaffID);
+         
             //资产信息的初始化
             AppPublic.Control.InitalControlHelper.Assets_GridLookUpEdit(glu_FA, null, false);
-            glu_FA.Properties.DataSource = ListAsset = AppPublic.Control.InitalControlHelper.GetAssetListByStatus(new AssetsStatus[] {AssetsStatus.XZ, AssetsStatus.ZY, AssetsStatus.WX });
+            glu_FA.Properties.DataSource = AllAssets = AppPublic.Control.InitalControlHelper.GetAssetListByStatus(new AssetsStatus[] {AssetsStatus.XZ, AssetsStatus.ZY, AssetsStatus.WX });
 
            
             //控件数据的绑定
-            gcData.DataSource = SelectListAsset;
+            gcData.DataSource = selectAssets;
             //日期控件的赋值
             bfday.DateTime = DateTime.Now;
 
             //仓库选择控件的初始化
             AppPublic.Control.InitalControlHelper.ys_AssetsStock_GridLookUpEdit(glu_FA_Stock);
-            glu_FA_Stock.EditValue = 1;//设置默认值
-
             txtUserName.Text = AppPublic.appSession._FullName;
-            MinID.EditValue = 1;
         }
 
         /// <summary>
@@ -65,31 +59,43 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         private void sbtnSave_Click(object sender, EventArgs e)
         {   
             //检查用户输入是否合法、部门、人员、资产信息
-            if (tl_Dept.EditValue != null&& StaffID.EditValue != null &&MinID.EditValue!=null&& SelectListAsset.Count > 0)
+            if (StaffID.EditValue != null && selectAssets.Count > 0)
             {
-                model.ScrapNo = bll.GetNewScrapNo();//生成订单号
-                model.ScrapUserId = AppPublic.appPublic.GetObjGUID(StaffID.EditValue);
-                model.ScrapUserName = StaffID.Text;
-                model.OperatorId = AppPublic.appSession._UserId;
-                model.ScrapDescription = txt_Desc.Text;
-                model.Scrapday = bfday.DateTime;
-                model.IsAudit = true;
-
+                List<Models.ys_ScrapOrder> list = new List<Models.ys_ScrapOrder>();
+                foreach(Models.ys_Assets a in selectAssets)
+                {
+                    var model = new Models.ys_ScrapOrder();
+                    model.ScrapNo = bll.GetNewScrapNo();//生成订单号
+                    model.ScrapUserId = AppPublic.appPublic.GetObjGUID(StaffID.EditValue);
+                    model.ScrapUserName = StaffID.Text;
+                    model.OperatorId = AppPublic.appSession._UserId;
+                    model.OperatorName = AppPublic.appSession._FullName;
+                    model.ScrapDescription = txt_Desc.Text;
+                    model.Scrapday = bfday.DateTime;
+                    model.IsAudit = true;
+                    model.AssetsId = a.Id;
+                    model.IsRemoved = false;
+                    model.OldStatusId = a.StatusId;
+                    model.CreateTime = DateTime.Now;
+                    list.Add(model);
+                }
                 //生成新的领用单
-                if (bll.AddNew(SelectListAsset))
+                if (bll.AddNew(list))
                 {
                     AppPublic.appPublic.ShowMessage("保存成功！", Text);
                     base.DialogResult = DialogResult.OK;
                 }
-                else {
+                else
+                {
                     AppPublic.appPublic.ShowMessage("保存失败！", Text);
                 }
             }
             else
             {
-                AppPublic.appPublic.ShowMessage("部门、职员、或领用的资产信息不能为空！", Text);
+                AppPublic.appPublic.ShowMessage("职员、或清理的资产信息不能为空！", Text);
             }
         }
+
         /// <summary>
         /// 添加选择的数据集记录
         /// </summary>
@@ -97,32 +103,31 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         {
             if (glu_FA.EditValue != null)
             {
-                Models.ys_Assets m = ListAsset.Find(s => s.Id.Equals(glu_FA.EditValue));
-                ListAsset.Remove(m);
-
-                Models.ys_ScrapOrder smodel = new Models.ys_ScrapOrder();
-                smodel.AssetsModel = m;
-                SelectListAsset.Add(smodel);
+                Models.ys_Assets m = AllAssets.Find(s => s.Id.Equals(glu_FA.EditValue));
+                AllAssets.Remove(m);
+                selectAssets.Add(m);
                 glu_FA_Stock_EditValueChanged(null, null);
                 glu_FA.EditValue = null;
                 gcData.RefreshDataSource();
             }
         }
-        /// <summary>
+
+        /// <summary> 
         /// 删除选择的数据集记录
         /// </summary>
         private void sbtnDelete_Click(object sender, EventArgs e)
         {
             if (gvData.FocusedRowHandle>= 0)
             {
-                Models.ys_ScrapOrder m = SelectListAsset.Find(s => s.Id.Equals(gvData.GetFocusedRowCellValue("Id")));
-                SelectListAsset.Remove(m);
-                Models.ys_Assets amodel = assetsManager.GetOneById(model.AssetsId);
-                ListAsset.Add(amodel);
+                Models.ys_Assets m = selectAssets.Find(s => s.Id.Equals(gvData.GetFocusedRowCellValue("Id")));
+
+                selectAssets.Remove(m);
+                AllAssets.Add(m);
                 glu_FA_Stock_EditValueChanged(null, null);
                 gcData.RefreshDataSource();
             }
         }
+
         /// <summary>
         /// 仓库控件选择值更改事件,处理资产控件数据
         /// </summary>
@@ -130,25 +135,21 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         {
             if (glu_FA_Stock.EditValue == null)
             {
-                glu_FA.Properties.DataSource = ListAsset;
+                glu_FA.Properties.DataSource = AllAssets;
                 return;
             }
-            glu_FA.Properties.DataSource = ListAsset.FindAll(s => s.StockId.Equals(glu_FA_Stock.EditValue));
+            glu_FA.Properties.DataSource = AllAssets.FindAll(s => s.StockId.Equals(glu_FA_Stock.EditValue));
         }
-
+        
         /// <summary>
-        /// 部门控件选择值更改事件,处理职员控件数据
+        /// 显示行号
         /// </summary>
-        private void tl_Dept_EditValueChanged(object sender, EventArgs e)
+        private void gvData_CustomDrawRowIndicator(object sender, DevExpress.XtraGrid.Views.Grid.RowIndicatorCustomDrawEventArgs e)
         {
-            //if (tl_Dept.EditValue == null)
-            //{
-            //    dvStaff.RowFilter = string.Format("DeptID='{0}'", Guid.Empty);
-            //    return;
-            //}
-            //Guid ID = (Guid)tl_Dept.EditValue;
-            //dvStaff.RowFilter = string.Format("DeptID ='{0}'", ID);
-            //StaffID.Properties.DataSource = dvStaff;
+            if (e.RowHandle >= 0)
+            {
+                e.Info.DisplayText = (e.RowHandle + 1).ToString();
+            }
         }
     }
 }
