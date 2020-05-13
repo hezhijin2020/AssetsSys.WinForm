@@ -51,16 +51,6 @@ namespace RightingSys.Models
         public string FinishUserName { get; set; }
 
         /// <summary>
-        /// 经办人Id
-        /// </summary>
-        public Guid   OperatorId { get; set; }
-
-        /// <summary>
-        /// 经办人
-        /// </summary>
-        public string OperatorName { get; set; }
-
-        /// <summary>
         /// 报修时间
         /// </summary>
         public DateTime Repairday { get; set; }

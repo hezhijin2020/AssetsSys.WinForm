@@ -36,17 +36,6 @@ namespace RightingSys.Models
         public string ApplyDepartmentName { get; set; }
 
         /// <summary>
-        /// 操作员Id
-        /// </summary>
-        public Guid OperatorId { get; set; }
-
-        /// <summary>
-        /// 操作人员
-        /// </summary>
-        public string OperatorName { get; set; }
-
-
-        /// <summary>
         /// 使用地点
         /// </summary>
         public string Location { get; set; }

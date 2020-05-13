@@ -17,6 +17,7 @@ namespace RightingSys.DAL
        /// <returns></returns>
         public bool AddNew(Models.ys_Assets model)
         {
+            Dictionary<SqlParameter[], string> sqlDic = new Dictionary<SqlParameter[], string>();
             string sqlText = @"INSERT INTO [AssetsSys].[dbo].[ys_Assets]
            ([Id]
            ,[Barcode]
@@ -73,7 +74,12 @@ namespace RightingSys.DAL
             SqlParameter s15 = new SqlParameter("@IsRemoved", model.IsRemoved);
 
             SqlParameter[] cmdPara = new SqlParameter[] { s1, s2, s3, s4,s5, s6, s7, s8,s9,s10,s11,s12,s13,s14,s15,s16,s17};
-            return Models.SqlHelper.ExecuteNoQuery(sqlText, cmdPara) > 0 ? true : false;
+
+            KeyValuePair<SqlParameter[], string> item = StatusChangeSerivce.AddNew("调拨", "LK"+DateTime.Now.ToString("yyyyMMdd"), model.Id);
+            sqlDic.Add(item.Key, item.Value);
+            sqlDic.Add(cmdPara, sqlText);
+
+            return Models.SqlHelper.ExecuteTransaction1(sqlDic,false) > 0 ? true : false;
 
         }
 

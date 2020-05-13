@@ -25,6 +25,9 @@ namespace RightingSys.DAL
             AddDicByOrder(model);
             foreach (Models.ys_ApplyOrderDetail d in model.Detail)
             {
+                KeyValuePair<SqlParameter[], string> item = StatusChangeSerivce.AddNew("领用", model.ApplyNo, d.AssetsId, model.OperatorId.ToString(), model.OperatorName, model.ApplyUserId.ToString(), model.ApplyUserName);
+                sqlDic.Add(item.Key, item.Value);
+
                 AddDicByOrderDetail(d);
                 AddDicByUpdateAssets(d.AssetsId,model.ApplyDepartmentId,model.ApplyUserId,model.Location);
             }

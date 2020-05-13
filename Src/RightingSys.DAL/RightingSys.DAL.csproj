@@ -51,6 +51,7 @@
     <Compile Include="AssetsService.cs" />
     <Compile Include="AssetsStockService.cs" />
     <Compile Include="CompanyService.cs" />
+    <Compile Include="StatusChangeSerivce.cs" />
     <Compile Include="SystemService.cs" />
     <Compile Include="FunctionSerivce.cs" />
     <Compile Include="RightingSysService.cs" />

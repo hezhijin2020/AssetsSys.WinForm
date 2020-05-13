@@ -36,15 +36,6 @@ namespace RightingSys.Models
         public string ReturnDepartmentName { get; set; }
 
         /// <summary>
-        /// 操作人员Id
-        /// </summary>
-        public Guid OperatorId { get; set; }
-        /// <summary>
-        /// 操作人员
-        /// </summary>
-        public string OperatorName { get; set; }
-
-        /// <summary>
         /// 借用时间
         /// </summary>
         public DateTime Returnday { get; set; } = DateTime.Now;

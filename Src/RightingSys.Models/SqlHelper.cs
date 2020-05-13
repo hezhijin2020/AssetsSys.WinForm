@@ -39,7 +39,6 @@ namespace RightingSys.Models
                         pi.SetValue(model, drValue, null);
                     }
                 }
-
                 list.Add(model);
             }
             return list;
@@ -288,6 +287,8 @@ namespace RightingSys.Models
             return ExecuteDataTable(str, param);
         }
         #endregion
+
+        #region 07.事务处理
         public static int ExecuteTransaction(IDictionary<string, SqlParameter[]> dics,bool IsAllowNoneRows=true)
         {
             int n = 0;
@@ -392,7 +393,6 @@ namespace RightingSys.Models
             }
         }
 
-
         //public static int ExecuteTransaction(IDictionary<string, SqlParameter[]> dics)
         //{
         //    int n = 0;
@@ -428,6 +428,9 @@ namespace RightingSys.Models
         //        con.Close();
         //    }
         //}
+        #endregion
+
+        #region 08.数据更新ExecuteUpdate DataSet
 
         public static int ExecuteUpdate(DataSet ds, params SqlParameter[] param)
         {
@@ -448,6 +451,6 @@ namespace RightingSys.Models
                 }
             }
         }
-
+        #endregion
     }
 }

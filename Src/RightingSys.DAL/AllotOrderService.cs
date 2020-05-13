@@ -14,7 +14,7 @@ namespace RightingSys.DAL
     {
         #region  新增订单事务处理
 
-        Dictionary<SqlParameter[],string> sqlDic = new Dictionary< SqlParameter[],string>();
+        Dictionary<SqlParameter[],string> sqlDic = new Dictionary<SqlParameter[],string>();
 
         /// <summary>
         /// 新增调拔信息
@@ -26,6 +26,9 @@ namespace RightingSys.DAL
             AddDicByOrder(model);
             foreach (Models.ys_AllotOrderDetail d in model.Detail)
             {
+                KeyValuePair<SqlParameter[], string> item = StatusChangeSerivce.AddNew("调拨", model.AllotNo, d.AssetsId, model.OperatorId.ToString(), model.OperatorName, model.AllotUserId.ToString(), model.AllotUserName);
+                sqlDic.Add(item.Key,item.Value);
+
                 AddDicByOrderDetail(d);
                 AddDicByUpdateAssets(d.AssetsId,model.AllotDepartmentId,model.AllotUserId,model.Location);
             }

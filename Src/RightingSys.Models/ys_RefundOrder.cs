@@ -27,14 +27,6 @@ namespace RightingSys.Models
         /// 退库人
         /// </summary>
         public string RefundUserName { get; set; }
-        /// <summary>
-        /// 操作员Id
-        /// </summary>
-        public Guid OperatorId { get; set; }
-        /// <summary>
-        /// 操作员
-        /// </summary>
-        public string OperatorName { get; set; }
 
         /// <summary>
         /// 描述信息

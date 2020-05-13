@@ -220,6 +220,12 @@
     <Compile Include="SubForm\pgAssetsManagerForm\AssetsBorrowEditForm.designer.cs">
       <DependentUpon>AssetsBorrowEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckForm.Designer.cs">
+      <DependentUpon>AssetsCheckForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\pgAssetsManagerForm\AssetsReturnEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsBorrowEditForm.resx">
       <DependentUpon>AssetsBorrowEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsCheckForm.resx">
+      <DependentUpon>AssetsCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsReturnEditForm.resx">
       <DependentUpon>AssetsReturnEditForm.cs</DependentUpon>

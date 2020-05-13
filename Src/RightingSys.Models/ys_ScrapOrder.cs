@@ -42,15 +42,6 @@ namespace RightingSys.Models
         public DateTime Scrapday { get; set; } = DateTime.Now;
 
         /// <summary>
-        /// 经办人Id
-        /// </summary>
-        public Guid OperatorId { get; set; }
-        /// <summary>
-        /// 经办人
-        /// </summary>
-        public string OperatorName { get; set; }
-
-        /// <summary>
         /// 描述信息
         /// </summary>
         public string ScrapDescription { get; set; } = "设备使命完成，淘汰";
