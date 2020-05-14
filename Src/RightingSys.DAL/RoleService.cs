@@ -218,7 +218,6 @@ namespace RightingSys.DAL
 
         #endregion
 
-
         #region  获取所有功能
         public IList<Models.ACL_Function> GetAllFunction()
         {

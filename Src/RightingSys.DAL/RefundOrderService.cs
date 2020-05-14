@@ -7,7 +7,7 @@ using System.Text;
 namespace RightingSys.DAL
 {
     /// <summary>
-    /// 领用服务类
+    /// 退库服务类
     /// </summary>
     public class RefundOrderService
     {
@@ -16,7 +16,7 @@ namespace RightingSys.DAL
         Dictionary< SqlParameter[], string> sqlDic = new Dictionary< SqlParameter[],string>();
 
         /// <summary>
-        /// 新增领用信息
+        /// 新增退库信息
         /// </summary>
         /// <param name="model">实体</param>
         /// <returns></returns>
@@ -25,6 +25,9 @@ namespace RightingSys.DAL
             AddDicByOrder(model);
             foreach (Models.ys_RefundOrderDetail d in model.Detail)
             {
+                KeyValuePair<SqlParameter[], string> item = StatusChangeSerivce.AddNew("退库", model.RefundNo, d.AssetsId, model.OperatorId.ToString(), model.OperatorName, model.RefundUserId.ToString(), model.RefundUserName);
+                sqlDic.Add(item.Key, item.Value);
+
                 AddDicByOrderDetail(d);
                 AddDicByUpdateAssets(d.AssetsId);
             }

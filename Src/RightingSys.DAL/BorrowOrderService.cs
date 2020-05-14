@@ -26,6 +26,9 @@ namespace RightingSys.DAL
             AddDicByOrder(model);
             foreach (Models.ys_BorrowOrderDetail d in model.Detail)
             {
+                KeyValuePair<SqlParameter[], string> item = StatusChangeSerivce.AddNew("借用", model.BorrowNo, d.AssetsId, model.OperatorId.ToString(), model.OperatorName, model.BorrowUserId.ToString(), model.BorrowUserName);
+                sqlDic.Add(item.Key, item.Value);
+
                 AddDicByOrderDetail(d);
                 AddDicByUpdateAssets(d.AssetsId,model.BorrowDepartmentId,model.BorrowUserId,"JY");
             }

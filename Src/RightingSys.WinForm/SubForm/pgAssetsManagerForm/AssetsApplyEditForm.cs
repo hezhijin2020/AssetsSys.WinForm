@@ -71,7 +71,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 model.Location = tlocation.Text;
 
                 model.ApplyUserId = AppPublic.appPublic.GetObjGUID(cbUser.EditValue);
-
+                model.ApplyUserName = cbUser.Text;
                 if (cbtlDepartment.EditValue == null)
                 {
                     model.ApplyDepartmentId = AppPublic.appPublic.GetObjGUID(cbUser.Properties.View.GetFocusedRowCellValue("DepartmentId"));
@@ -82,6 +82,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 }
 
                 model.OperatorId = AppPublic.appSession._UserId;
+                model.OperatorName = AppPublic.appSession._FullName;
                 model.Description = tDescription.Text;
                 model.Applyday = tApplyday.DateTime;
                 model.Detail = new List<Models.ys_ApplyOrderDetail>();

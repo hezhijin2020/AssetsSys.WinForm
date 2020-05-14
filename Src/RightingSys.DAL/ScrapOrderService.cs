@@ -25,6 +25,9 @@ namespace RightingSys.DAL
         {
             foreach (Models.ys_ScrapOrder r in listModel)
             {
+                KeyValuePair<SqlParameter[], string> item = StatusChangeSerivce.AddNew("维修", r.ScrapNo, r.AssetsId, r.OperatorId.ToString(), r.OperatorName, r.ScrapUserId.ToString(), r.ScrapUserName);
+                dicCmd.Add(item.Key, item.Value);
+
                 AddDicByRepairOrder(r);
                 AddDicByUpdateAssets(r);
             }

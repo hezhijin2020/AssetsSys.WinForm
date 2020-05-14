@@ -286,6 +286,12 @@
     <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapAddNewForm.Designer.cs">
       <DependentUpon>AssetsScrapAddNewForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\pgStatisticalAnalysis\AssetsStatusChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgStatisticalAnalysis\AssetsStatusChangeForm.Designer.cs">
+      <DependentUpon>AssetsStatusChangeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\clsEnum\AssetsStatus.cs" />
     <Compile Include="Utils\clsEnum\FeatureButton.cs" />
     <Compile Include="Utils\cls\clsnet.cs" />
@@ -506,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\pgBaseForm\CompanyForm.resx">
       <DependentUpon>CompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgStatisticalAnalysis\AssetsStatusChangeForm.resx">
+      <DependentUpon>AssetsStatusChangeForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="SubForm\pageBaseinfo\FunctionForm.resx">

@@ -66,8 +66,10 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 model.Id = Guid.NewGuid();
                 model.RefundNo = manager.GetNewRefundNo();
                 model.RefundUserId = AppPublic.appPublic.GetObjGUID(cbUser.EditValue);
+                model.RefundUserName = cbUser.Text;
 
                 model.OperatorId = AppPublic.appSession._UserId;
+                model.OperatorName = AppPublic.appSession._FullName;
                 model.Description = tDescription.Text;
                 model.Refundday = tApplyday.DateTime;
                 model.Detail = new List<Models.ys_RefundOrderDetail>();

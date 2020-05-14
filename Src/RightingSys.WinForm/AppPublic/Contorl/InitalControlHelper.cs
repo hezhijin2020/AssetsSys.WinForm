@@ -296,7 +296,7 @@ namespace RightingSys.WinForm.AppPublic.Control
 
         #region FA_Asset
 
-        public static void Assets_GridLookUpEdit(DevExpress.XtraEditors.GridLookUpEdit Control,AssetsStatus[] statuses, bool IsBindingData=true)
+        public static void Assets_GridLookUpEdit(DevExpress.XtraEditors.GridLookUpEdit Control,AssetsStatus[] statuses=null, bool IsBindingData=true)
         {
             #region 列名 
 
@@ -374,15 +374,7 @@ namespace RightingSys.WinForm.AppPublic.Control
 
             if (IsBindingData)
             {
-                if (statuses == null || statuses.Length <= 0)
-                {
-                    Control.Properties.DataSource = InitalControlHelper.GetAssetListByStatus(statuses);
-                }
-                else
-                {
-                    Control.Properties.DataSource = InitalControlHelper.GetAssetListByStatus(statuses);
-                }
-               
+                Control.Properties.DataSource = InitalControlHelper.GetAssetListByStatus(statuses);
             }
         }
         
@@ -402,6 +394,8 @@ namespace RightingSys.WinForm.AppPublic.Control
         /// <returns></returns>
         public static List<Models.ys_Assets> GetAssetListByStatus(params Utils.clsEnum.AssetsStatus[] enums)
         {
+            if (enums == null)
+                return InitalControlHelper.GetAssetsAllList();
             string[] subs = new string[enums.Length];
             for( int i=0;i< enums.Length;i++)
             {

@@ -65,6 +65,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 lyModel.Location = cblocation.Text;
 
                 lyModel.ApplyUserId = Utils.cls.clsPublic.GetObjGUID(cbUser.EditValue);
+                lyModel.ApplyUserName = cbUser.Text;
 
                 if (cbtlDepartment.EditValue == null)
                 {
@@ -76,6 +77,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 }
 
                 lyModel.OperatorId = AppPublic.appSession._UserId;
+                lyModel.OperatorName = AppPublic.appSession._FullName;
                 lyModel.Description = "登记时生成";
                 lyModel.Applyday = DateTime.Now;
 
@@ -227,6 +229,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         {
             if (txt_FA_Name.Text.Trim() != "" && cbtlCategory.EditValue != null && txt_FA_Model.Text.Trim() != "")
             {
+                model.OperatorId = AppPublic.appSession._UserId;
+                model.OperatorName = AppPublic.appSession._FullName;
                 model.CreateTime = model.Buyday = d_Buytime.DateTime;
                 model.DepartmentId = AppPublic.appPublic.GetObjGUID(cbtlDepartment);
                 model.Description = txt_FA_Desc.Text;

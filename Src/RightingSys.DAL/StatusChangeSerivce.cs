@@ -189,5 +189,47 @@ namespace RightingSys.DAL
             return list;
         }
 
+
+        /// <summary>
+        /// 获取所有的记录
+        /// </summary>
+        public System.Data.DataTable GetTableList(string where)
+        {
+            List<Models.ys_AssetsStatusChange> list = new List<Models.ys_AssetsStatusChange>();
+
+            string sqlText =string.Format(@"SELECT a.[Id]
+      ,a.[ActionName]
+      ,a.[ActionNo]
+      ,a.[AssetsId]
+      ,a.[ActionUserName]
+      ,a.[ActionUserId]
+      ,a.[OperatorName]
+      ,a.[OperatorId]
+      ,a.[CreateTime]
+      ,a.[IsRemoved]
+      ,b.[Barcode]
+      ,b.[Name]
+      ,b.[Model]
+      ,b.[CompanyId]
+      ,b.[CompanyName]
+      ,b.[CategoryId]
+      ,b.[CategoryName]
+      ,b.[DepartmentId]
+      ,b.[DepartmentName]
+      ,b.[UserId]
+      ,b.[UserName]
+      ,b.[Buyday]
+      ,b.[Location]
+      ,b.[StockId]
+      ,b.[StockName]
+      ,b.[Price]
+      ,b.[Description]
+      ,b.[XmlInf]
+      ,b.[StatusId]
+      ,b.[StatusName]
+  FROM [AssetsSys].[dbo].[ys_AssetsStatusChange] as  a  left join vw_Assets as b on a.AssetsId=b.Id  {0}",where);
+
+           return Models.SqlHelper.ExecuteDataTable(sqlText);
+        }
     }
 }

@@ -1051,5 +1051,10 @@ namespace RightingSys.WinForm
         {
             MdiShow(new RightingSys.WinForm.SubForm.pgAssetsManagerForm.AssetsScrapForm(), btnAssetsScrap.Tag);
         }
+
+        private void btnStatusChange_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MdiShow(new RightingSys.WinForm.SubForm.pgStatisticalAnalysis.AssetsStatusChangeForm(), btnStatusChange.Tag);
+        }
     }
 }

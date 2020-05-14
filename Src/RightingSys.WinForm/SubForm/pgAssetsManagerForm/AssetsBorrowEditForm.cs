@@ -67,8 +67,10 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 model.Id = Guid.NewGuid();
                 model.BorrowNo = manager.GetNewBorrowNo();
                 model.BorrowUserId = AppPublic.appPublic.GetObjGUID(cbUser.EditValue);
+                model.BorrowUserName = cbUser.Text;
                 model.BorrowDepartmentId = userList.FirstOrDefault(a => a.Id == model.BorrowUserId).DepartmentId;
                 model.OperatorId = AppPublic.appSession._UserId;
+                model.OperatorName = AppPublic.appSession._FullName;
                 model.Description = tDescription.Text;
                 model.Borrowday = tBorrowday.DateTime;
                 model.Planday = tPlenday.DateTime;

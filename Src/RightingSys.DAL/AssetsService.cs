@@ -75,7 +75,7 @@ namespace RightingSys.DAL
 
             SqlParameter[] cmdPara = new SqlParameter[] { s1, s2, s3, s4,s5, s6, s7, s8,s9,s10,s11,s12,s13,s14,s15,s16,s17};
 
-            KeyValuePair<SqlParameter[], string> item = StatusChangeSerivce.AddNew("调拨", "LK"+DateTime.Now.ToString("yyyyMMdd"), model.Id);
+            KeyValuePair<SqlParameter[], string> item = StatusChangeSerivce.AddNew("登记", "LK"+DateTime.Now.ToString("yyyyMMdd"), model.Id,model.OperatorId.ToString(),model.OperatorName);
             sqlDic.Add(item.Key, item.Value);
             sqlDic.Add(cmdPara, sqlText);
 

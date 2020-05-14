@@ -24,5 +24,14 @@ namespace RightingSys.BLL
         {
             return sev.GetAllList().Where(a => a.IsRemoved == false).ToList();
         }
+
+
+        /// <summary>
+        /// 获取所有的记录
+        /// </summary>
+        public System.Data.DataTable GetTableList(string where)
+        {
+            return sev.GetTableList(where);
+        }
     }
 }

@@ -66,7 +66,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 model.Id = Guid.NewGuid();
                 model.ReturnNo = manager.GetNewRefundNo();
                 model.ReturnUserId = AppPublic.appPublic.GetObjGUID(cbUser.EditValue);
-
+                model.ReturnUserName = cbUser.Text;
+                model.OperatorName = AppPublic.appSession._FullName;
                 model.OperatorId = AppPublic.appSession._UserId;
                 model.Description = tDescription.Text;
                 model.Returnday = tApplyday.DateTime;
