@@ -82,6 +82,7 @@
             this.btnAssetsRepair = new DevExpress.XtraBars.BarButtonItem();
             this.btnAssetsScrap = new DevExpress.XtraBars.BarButtonItem();
             this.btnAssetsCheck = new DevExpress.XtraBars.BarButtonItem();
+            this.btnStatusChange = new DevExpress.XtraBars.BarButtonItem();
             this.pageEditor = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupOpDate = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.groupCommit = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -97,16 +98,15 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageSystemLogs = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.pageStatisticalAnalysis = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageHelper = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.grouptool = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.ntyAlert = new System.Windows.Forms.NotifyIcon(this.components);
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.tabMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.pageStatisticalAnalysis = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnStatusChange = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.MainRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabMdiManager)).BeginInit();
             this.SuspendLayout();
@@ -672,6 +672,18 @@
             this.btnAssetsCheck.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnAssetsCheck.Tag = "5e41e45c-582b-49c1-809c-9affeb081ffa";
+            this.btnAssetsCheck.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAssetsCheck_ItemClick);
+            // 
+            // btnStatusChange
+            // 
+            this.btnStatusChange.Caption = "资产履历";
+            this.btnStatusChange.Id = 37;
+            this.btnStatusChange.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStatusChange.ImageOptions.Image")));
+            this.btnStatusChange.Name = "btnStatusChange";
+            this.btnStatusChange.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnStatusChange.Tag = "3b2d8aa0-9e00-4f19-80cb-842872b957df";
+            this.btnStatusChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStatusChange_ItemClick);
             // 
             // pageEditor
             // 
@@ -800,6 +812,28 @@
             this.groupManager.Name = "groupManager";
             this.groupManager.Text = "资产管理";
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsScrap);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsRepair, true);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsCheck, true);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
+            // 
+            // pageStatisticalAnalysis
+            // 
+            this.pageStatisticalAnalysis.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup4});
+            this.pageStatisticalAnalysis.Name = "pageStatisticalAnalysis";
+            this.pageStatisticalAnalysis.Tag = "f0927e55-09f8-4d9d-9183-16ee8cdd7e25";
+            this.pageStatisticalAnalysis.Text = "统计分析";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnStatusChange);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "资产分析";
+            // 
             // pageHelper
             // 
             this.pageHelper.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -840,39 +874,6 @@
             // 
             this.tabMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageHeaderAndOnMouseHover;
             this.tabMdiManager.MdiParent = this;
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsScrap);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsRepair, true);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsCheck, true);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
-            // 
-            // pageStatisticalAnalysis
-            // 
-            this.pageStatisticalAnalysis.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup4});
-            this.pageStatisticalAnalysis.Name = "pageStatisticalAnalysis";
-            this.pageStatisticalAnalysis.Tag = "f0927e55-09f8-4d9d-9183-16ee8cdd7e25";
-            this.pageStatisticalAnalysis.Text = "统计分析";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnStatusChange);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "资产分析";
-            // 
-            // btnStatusChange
-            // 
-            this.btnStatusChange.Caption = "资产履历";
-            this.btnStatusChange.Id = 37;
-            this.btnStatusChange.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnStatusChange.ImageOptions.Image")));
-            this.btnStatusChange.Name = "btnStatusChange";
-            this.btnStatusChange.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnStatusChange.Tag = "3b2d8aa0-9e00-4f19-80cb-842872b957df";
-            this.btnStatusChange.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnStatusChange_ItemClick);
             // 
             // MainForm
             // 

@@ -12,6 +12,8 @@ namespace RightingSys.Models
         /// </summary>
         public string CheckNo { get; set; }
 
+        public DateTime Checkday { get; set; } = DateTime.Now;
+
         /// <summary>
         /// 描述
         /// </summary>

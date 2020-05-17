@@ -125,7 +125,7 @@ namespace RightingSys.DAL
         public bool SaveRighting(System.Data.DataTable dt, string RoleId)
         {
             Dictionary<string, SqlParameter[]> array = new Dictionary<string, SqlParameter[]>();
-            array.Add("if   object_id('tempdb..#Right') is not null drop table #tempRoleFunc",null);
+            array.Add("if   object_id('tempdb..#Right') is not null drop table #Right", null);
             array.Add(" create table #Right (RoleId uniqueidentifier, FuncID uniqueidentifier, OpCode int)",null);
             foreach (System.Data.DataRow r in dt.Rows)
             {

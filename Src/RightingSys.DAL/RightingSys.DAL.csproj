@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AllotOrderService.cs" />
+    <Compile Include="CheckOrderService.cs" />
     <Compile Include="ScrapOrderService.cs" />
     <Compile Include="RepairOrderService.cs" />
     <Compile Include="ReturnOrderService.cs" />
