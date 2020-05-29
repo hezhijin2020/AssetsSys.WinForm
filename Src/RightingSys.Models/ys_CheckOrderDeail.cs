@@ -24,6 +24,16 @@ namespace RightingSys.Models
         public string OldStatusId { get; set; }
 
         /// <summary>
+        /// 是否已盘
+        /// </summary>
+        public bool IsCheck { get; set; } = false;
+
+        /// <summary>
+        /// 盘点时间
+        /// </summary>
+        public DateTime IsCheckTime { get; set; } = DateTime.Now;
+
+        /// <summary>
         /// 盘点员ID
         /// </summary>
         public Guid CheckUserId { get; set; }

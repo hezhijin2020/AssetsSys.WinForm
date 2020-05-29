@@ -17,7 +17,7 @@ namespace RightingSys.BLL
         /// <returns></returns>
         public bool AddNew(Models.ys_CheckOrder model)
         {
-           return sev.AddNew(model);
+            return sev.AddNew(model);
         }
 
         /// <summary>
@@ -56,7 +56,24 @@ namespace RightingSys.BLL
         /// <returns></returns>
         public List<Models.ys_CheckOrder> GetAllList()
         {
-          return  sev.GetAllList().Where(a => a.IsRemoved == false).ToList();
+            return sev.GetAllList().Where(a => a.IsRemoved == false).ToList();
+        }
+
+        /// <summary>
+        /// 是否有存在未审核的盘点单
+        /// </summary>
+        /// <returns></returns>
+        public bool IsExistsUnAuditCheckNo()
+        {
+            Models.ys_CheckOrder model = sev.GetAllList().FirstOrDefault(a => a.IsRemoved == false && a.IsAudit == false);
+            if (model != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -113,6 +130,26 @@ namespace RightingSys.BLL
         public bool SaveDetail(DataTable dt)
         {
             return sev.SaveDetail(dt);
+        }
+
+        /// <summary>
+        /// 盘点单审核
+        /// </summary>
+        /// <param name="model">盘点单实体</param>
+        /// <returns></returns>
+        public bool Approve(Models.ys_CheckOrder model)
+        {
+            return sev.Approve(model);
+        }
+
+        /// <summary>
+        /// 盘点单反审核
+        /// </summary>
+        /// <param name="model">盘点单实体</param>
+        /// <returns></returns>
+        public bool UnApprove(Models.ys_CheckOrder model)
+        {
+            return sev.Approve(model);
         }
     }
 }

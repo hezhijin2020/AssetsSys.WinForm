@@ -160,6 +160,12 @@
     <Compile Include="BaseForm.Designer.cs">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevReport\rptCheckOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptCheckOrder.Designer.cs">
+      <DependentUpon>rptCheckOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="DevReport\rptScrapOrder.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -213,6 +219,12 @@
     </Compile>
     <Compile Include="SubForm\pgAssetsManagerForm\AssetsAllotForm.designer.cs">
       <DependentUpon>AssetsAllotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckApproveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckApproveForm.Designer.cs">
+      <DependentUpon>AssetsCheckApproveForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SubForm\pgAssetsManagerForm\AssetsBorrowEditForm.cs">
       <SubType>Form</SubType>
@@ -435,6 +447,9 @@
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptCheckOrder.resx">
+      <DependentUpon>rptCheckOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DevReport\rptScrapOrder.resx">
       <DependentUpon>rptScrapOrder.cs</DependentUpon>
     </EmbeddedResource>
@@ -461,6 +476,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsAllotForm.resx">
       <DependentUpon>AssetsAllotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsCheckApproveForm.resx">
+      <DependentUpon>AssetsCheckApproveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsBorrowEditForm.resx">
       <DependentUpon>AssetsBorrowEditForm.cs</DependentUpon>

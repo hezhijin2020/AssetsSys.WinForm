@@ -37,6 +37,10 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 txtDescription.Text = model.Description;
                 cIsAudit.Checked = model.IsAudit;
                 gcData.DataSource = dtAll = manager.GetAllTable(checkId);
+                if (model.IsAudit)
+                {
+                    gvData.OptionsBehavior.Editable = false;
+                }
                 
             }
         }
@@ -91,12 +95,15 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             if (e.Column.FieldName == "IsSelect")
             {
                 object time = DateTime.Now;
-
+                object userid = AppPublic.appSession._UserId;
+                object username = AppPublic.appSession._FullName;
                 if (!(bool)e.Value)
                 {
-                    time = null;
+                    time = null;userid = null;username = null;
                 }
-                gvData.SetRowCellValue(e.RowHandle,"CreateTime", DateTime.Now);
+                gvData.SetRowCellValue(e.RowHandle,"IsCheckTime", time);
+                gvData.SetRowCellValue(e.RowHandle, "CheckUserId",userid);
+                gvData.SetRowCellValue(e.RowHandle, "CheckUserName", username);
                 gcData.RefreshDataSource();
             }
         }
@@ -138,6 +145,21 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             }
             else {
                 MessageBox.Show("没有要保存的数据");
+            }
+        }
+
+        /// <summary>
+        /// 显示盘点机的审核情况
+        /// </summary>
+        private void cIsAudit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cIsAudit.Checked)
+            {
+                cIsAudit.Text = "已审核";
+            }
+            else
+            {
+                cIsAudit.Text = "未审核";
             }
         }
     }

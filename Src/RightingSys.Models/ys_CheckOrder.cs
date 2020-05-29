@@ -30,5 +30,10 @@ namespace RightingSys.Models
         /// </summary>
         public DateTime IsAuditday { get; set; } = DateTime.Parse("2020-01-01");
 
+        /// <summary>
+        /// 盘差明细
+        /// </summary>
+        public IList<Models.ys_CheckOrderDeail> Details { get; set; }
+
     }
 }

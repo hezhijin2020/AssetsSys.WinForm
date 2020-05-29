@@ -3311,7 +3311,7 @@ namespace RightingSys.WinForm.AppPublic
         #endregion
 
         #region  提示消息片处理方法
-        public static bool GetMessageBoxYesNoResult(string Question, string Caption)
+        public static bool GetMessageBoxYesNoResult(string Question, string Caption="询问")
         {
             return DevExpress.XtraEditors.XtraMessageBox.Show(Question, Caption, System.Windows.Forms.MessageBoxButtons.YesNo, System.Windows.Forms.MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes;
         }

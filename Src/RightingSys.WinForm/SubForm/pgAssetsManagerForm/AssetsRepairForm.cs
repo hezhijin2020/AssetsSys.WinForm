@@ -76,12 +76,12 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         /// </summary>
         private void gvData_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!(bool)gvData.GetFocusedRowCellValue("IsFinish"))
+            DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo viewInfo = gvData.CalcHitInfo(new Point(e.X, e.Y));
+            if (e.Clicks == 2 && e.Button == MouseButtons.Left)
             {
-                DevExpress.XtraGrid.Views.Grid.ViewInfo.GridHitInfo viewInfo = gvData.CalcHitInfo(new Point(e.X, e.Y));
-                if (e.Clicks == 2 && e.Button == MouseButtons.Left)
+                if (viewInfo.InRow)
                 {
-                    if (viewInfo.InRow)
+                    if (!(bool)gvData.GetFocusedRowCellValue("IsFinish"))
                     {
                         Guid ID = AppPublic.appPublic.GetObjGUID(gvData.GetFocusedRowCellValue("Id"));
                         AssetsRepairFinishForm sub = new AssetsRepairFinishForm(ID);

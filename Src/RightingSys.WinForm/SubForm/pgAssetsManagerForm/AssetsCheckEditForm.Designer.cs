@@ -49,6 +49,8 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
@@ -99,6 +101,7 @@
             this.cIsAudit.Properties.ReadOnly = true;
             this.cIsAudit.Size = new System.Drawing.Size(78, 23);
             this.cIsAudit.TabIndex = 9;
+            this.cIsAudit.CheckedChanged += new System.EventHandler(this.cIsAudit_CheckedChanged);
             // 
             // txtDescription
             // 
@@ -197,7 +200,9 @@
             this.gridColumn6,
             this.gridColumn8,
             this.gridColumn9,
-            this.gridColumn10});
+            this.gridColumn10,
+            this.gridColumn7,
+            this.gridColumn11});
             this.gvData.GridControl = this.gcData;
             this.gvData.IndicatorWidth = 40;
             this.gvData.Name = "gvData";
@@ -213,7 +218,7 @@
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 94;
+            this.gridColumn1.Width = 97;
             // 
             // gridColumn2
             // 
@@ -223,7 +228,7 @@
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 85;
+            this.gridColumn2.Width = 86;
             // 
             // gridColumn3
             // 
@@ -233,7 +238,7 @@
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 85;
+            this.gridColumn3.Width = 73;
             // 
             // gridColumn4
             // 
@@ -243,7 +248,7 @@
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
-            this.gridColumn4.Width = 85;
+            this.gridColumn4.Width = 73;
             // 
             // gridColumn5
             // 
@@ -253,7 +258,7 @@
             this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
-            this.gridColumn5.Width = 85;
+            this.gridColumn5.Width = 73;
             // 
             // gridColumn6
             // 
@@ -263,7 +268,7 @@
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 52;
+            this.gridColumn6.Width = 62;
             // 
             // gridColumn8
             // 
@@ -273,7 +278,7 @@
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 43;
+            this.gridColumn8.Width = 46;
             // 
             // gridColumn9
             // 
@@ -282,19 +287,34 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 7;
-            this.gridColumn9.Width = 43;
+            this.gridColumn9.Width = 45;
             // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "时间";
             this.gridColumn10.DisplayFormat.FormatString = "yyyy-MM-dd HH:mm:ss";
             this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.gridColumn10.FieldName = "CreateTime";
+            this.gridColumn10.FieldName = "IsCheckTime";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 8;
-            this.gridColumn10.Width = 218;
+            this.gridColumn10.Width = 169;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "盘点人";
+            this.gridColumn7.FieldName = "CheckUserName";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 9;
+            this.gridColumn7.Width = 66;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "盘点人Id";
+            this.gridColumn11.FieldName = "CheckUserId";
+            this.gridColumn11.Name = "gridColumn11";
             // 
             // btnSave
             // 
@@ -399,5 +419,7 @@
         private DevExpress.XtraEditors.SimpleButton btnCancel;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.RadioGroup FilterGroup;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
     }
 }

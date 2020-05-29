@@ -60,8 +60,7 @@ namespace RightingSys.WinForm.SubForm.pgStatisticalAnalysis
                     }
                 }
             }
-
-
+            
             gcData.DataSource = manager.GetTableList(where);
         }
 
