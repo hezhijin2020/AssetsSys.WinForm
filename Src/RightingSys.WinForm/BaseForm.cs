@@ -1,5 +1,7 @@
-﻿using RightingSys.WinForm.AppPublic.Enum;
+﻿
 using System;
+using RightingSys.WinForm.Utils.clsInterface;
+using RightingSys.WinForm.Utils.clsEnum;
 
 namespace RightingSys.WinForm
 {
@@ -15,7 +17,7 @@ namespace RightingSys.WinForm
         public Guid sFuncId = Guid.Empty;
         public FeatureButton[] activeBtns;
 
-        public AppPublic.Interface.IMainForm Mainform { get; set; }
+        public IMainForm Mainform { get; set; }
 
 
         #endregion

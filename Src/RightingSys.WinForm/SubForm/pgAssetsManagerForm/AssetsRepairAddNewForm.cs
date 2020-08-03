@@ -1,4 +1,5 @@
-﻿using RightingSys.WinForm.Utils.clsEnum;
+﻿using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -25,7 +26,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         
         private void Initial()
         {
-            txtOperatorUser.Text = AppPublic.appSession._LoginName;
+            txtOperatorUser.Text = clsSession._LoginName;
 
             AppPublic.Control.InitalControlHelper.ACL_User_GridLookUpEdit(cbxRepairUser);
 
@@ -49,12 +50,12 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         {
             if (manager.AddNew(selectview))
             {
-                AppPublic.appPublic.ShowMessage("保存成功！", Text);
+                clsPublic.ShowMessage("保存成功！", Text);
                 base.DialogResult = DialogResult.OK;
             }
             else
             {
-                AppPublic.appPublic.ShowMessage("保存失败！", Text);
+                clsPublic.ShowMessage("保存失败！", Text);
             }
 
         }
@@ -74,13 +75,13 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 m.AssetsId = model.Id;
                 m.CompanyId =(Guid)cbxCompany.EditValue;
                 m.CompanyName = cbxCompany.Text;
-                m.OperatorId = AppPublic.appSession._UserId;
-                m.OperatorName = AppPublic.appSession._FullName;
+                m.OperatorId = clsSession._UserId;
+                m.OperatorName = clsSession._FullName;
                 m.Repairday = tRepairday.DateTime;
                 m.RepairNo = this.NewRepairNo;
-                m.RepairPrice= AppPublic.appPublic.ToDecimal(txtRepairPrice.EditValue);
+                m.RepairPrice= clsPublic.ToDecimal(txtRepairPrice.EditValue);
                 m.RepairReason = txtRepairReason.Text;
-                m.RepairUserId = AppPublic.appPublic.GetObjGUID(cbxRepairUser.EditValue);
+                m.RepairUserId = clsPublic.GetObjGUID(cbxRepairUser.EditValue);
                 m.RepairUserName = cbxRepairUser.Text;
                 m.OldStatusId = model.StatusId;
                 m.AssetsModel = model;
@@ -92,7 +93,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 cbxStock_EditValueChanged(null, null);
             }
             else {
-                AppPublic.appPublic.ShowMessage("维修机构、报修人员、维修资产、维修原因不能为空！", Text);
+                clsPublic.ShowMessage("维修机构、报修人员、维修资产、维修原因不能为空！", Text);
             }
         }
 

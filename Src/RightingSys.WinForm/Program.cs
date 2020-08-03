@@ -1,6 +1,7 @@
 ﻿using DevExpress.Skins;
 using DevExpress.UserSkins;
 using RightingSys.WinForm.AppPublic.AutoService;
+using RightingSys.WinForm.Utils.cls;
 using System;
 using System.Diagnostics;
 using System.Threading;
@@ -83,7 +84,7 @@ namespace RightingSys.WinForm
                 string FileName = Application.StartupPath + "\\UpdateList.xml";
                 XmlFiles xdoc = new XmlFiles(FileName);
                 string version = xdoc.GetNodeValue("AutoUpdate/Application/Version");
-                result = systemMg.IsNeedUpdate(AppPublic.appSession._SystemId, version);
+                result = systemMg.IsNeedUpdate(clsSession._SystemId, version);
             }
             catch (Exception ex)
             {

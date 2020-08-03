@@ -1,4 +1,5 @@
 ﻿
+using RightingSys.WinForm.Utils.cls;
 using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Windows.Forms;
@@ -63,13 +64,13 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 model.RepairDescription = txtRepairDescription.Text.Trim();
                 model.RepairReason = txtRepairReason.Text.Trim();
 
-                model.FinishUserName = AppPublic.appSession._FullName;
-                model.FinishUserId = AppPublic.appSession._UserId;
+                model.FinishUserName = clsSession._FullName;
+                model.FinishUserId = clsSession._UserId;
                 model.Finishday = DateTime.Now;
                 model.IsFinish = true;
 
-                model.RepairPrice = AppPublic.appPublic.ToDecimal(txtPrice.Text);
-                model.CompanyId = AppPublic.appPublic.GetObjGUID(cbxCompany.EditValue);
+                model.RepairPrice = clsPublic.ToDecimal(txtPrice.Text);
+                model.CompanyId = clsPublic.GetObjGUID(cbxCompany.EditValue);
                 if (manager.Modify(model))
                 {
                     MessageBox.Show("成功.", Text);

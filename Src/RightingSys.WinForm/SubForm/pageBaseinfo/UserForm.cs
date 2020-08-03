@@ -7,7 +7,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.clsEnum;
+using RightingSys.WinForm.Utils.ToolForm;
+using RightingSys.WinForm.Utils.cls;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
@@ -82,7 +84,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 
         public override void Import()
         {
-            AppPublic.appPublic.GetOpenXlsFileName("");
+            clsPublic.GetOpenXlsFileName("");
 
             //string filePath = "文件完整的路径";
             //int sheetIndex = 1;//将要读取的Sheet页，从1开始
@@ -103,12 +105,12 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 
         public override void Export()
         {
-            AppPublic.appPublic.DevExprot(gcUser);
+            clsPublic.DevExprot(gcUser);
         }
 
         public override void Preview()
         {
-            AppPublic.appPublic.DevPreview(gcUser,"用户信息",true);
+            clsPublic.DevPreview(gcUser,"用户信息",true);
         }
 
         public override void Print()
@@ -159,24 +161,24 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
         
         private void MenuFingerAdd_Click(object sender, EventArgs e)
         {
-            Guid UserID =AppPublic.appPublic.GetObjGUID(gvUser.GetFocusedRowCellValue("Id"));
-            string FullName = AppPublic.appPublic.GetObjectString(gvUser.GetFocusedRowCellValue("FullName"));
-            string DepartmentName = AppPublic.appPublic.GetObjectString(gvUser.GetFocusedRowCellValue("DepartmentName"));
+            Guid UserID =clsPublic.GetObjGUID(gvUser.GetFocusedRowCellValue("Id"));
+            string FullName = clsPublic.GetObjectString(gvUser.GetFocusedRowCellValue("FullName"));
+            string DepartmentName = clsPublic.GetObjectString(gvUser.GetFocusedRowCellValue("DepartmentName"));
             if (UserID != Guid.Empty)
             {
-                AppPublic.Finger.UserFingerAdd cap = new AppPublic.Finger.UserFingerAdd(UserID,FullName,DepartmentName);
+                UserFingerAdd cap = new UserFingerAdd(UserID,FullName,DepartmentName);
                 cap.ShowDialog();
             }
         }
 
         private void MenuFingerClear_Click(object sender, EventArgs e)
         {
-            Guid UserID = AppPublic.appPublic.GetObjGUID(gvUser.GetFocusedRowCellValue("UserId"));
+            Guid UserID = clsPublic.GetObjGUID(gvUser.GetFocusedRowCellValue("UserId"));
             if (UserID != Guid.Empty)
             {
-                if (AppPublic.appPublic.GetMessageBoxYesNoResult("是否清除该用户的指纹信息？",Text)&&fingerMg.Delete(UserID))
+                if (clsPublic.GetMessageBoxYesNoResult("是否清除该用户的指纹信息？",Text)&&fingerMg.Delete(UserID))
                 {
-                    AppPublic.appPublic.ShowMessage("清除成功！", Text);
+                    clsPublic.ShowMessage("清除成功！", Text);
                 }
                     
             }
@@ -184,17 +186,17 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 
         private void MenuFingerVerification_Click(object sender, EventArgs e)
         {
-            Guid UserID = AppPublic.appPublic.GetObjGUID(gvUser.GetFocusedRowCellValue("Id"));
+            Guid UserID = clsPublic.GetObjGUID(gvUser.GetFocusedRowCellValue("Id"));
             if (UserID != Guid.Empty)
             {
-                AppPublic.Finger.UserFingerMatching cap = new AppPublic.Finger.UserFingerMatching(UserID);
+                UserFingerMatching cap = new UserFingerMatching(UserID);
                 cap.ShowDialog();
             }
         }
 
         private void MenuFingerMatching_Click(object sender, EventArgs e)
         {
-           AppPublic.Finger.UserFingerMatching cap = new AppPublic.Finger.UserFingerMatching();
+           UserFingerMatching cap = new UserFingerMatching();
            cap.ShowDialog();
         }
     }

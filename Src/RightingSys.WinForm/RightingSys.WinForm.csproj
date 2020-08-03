@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>RightingSys.WinForm</RootNamespace>
     <AssemblyName>AssetsSys</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -26,6 +26,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -45,38 +47,42 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>AppPublic\Image\logo2.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
-    <Reference Include="DevExpress.BonusSkins.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Data.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPivotGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraScheduler.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Export, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.1.Extensions, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="libzkfpcsharp, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\libzkfpcsharp.dll</HintPath>
@@ -102,58 +108,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppPublic\appClass\appdelegate.cs" />
-    <Compile Include="AppPublic\appClass\appIniConfig.cs" />
-    <Compile Include="AppPublic\appClass\appLogs.cs" />
-    <Compile Include="AppPublic\appClass\appPublic.cs" />
-    <Compile Include="AppPublic\appClass\appSession.cs" />
-    <Compile Include="AppPublic\appClass\appSQL.cs" />
-    <Compile Include="AppPublic\appClass\SqlParameters.cs" />
     <Compile Include="AppPublic\AutoService\FileUnit.cs" />
     <Compile Include="AppPublic\AutoService\IniFiles.cs" />
     <Compile Include="AppPublic\AutoService\XMLFile.cs" />
     <Compile Include="AppPublic\AutoService\XmlFiles.cs" />
-    <Compile Include="AppPublic\Contorl\F_Func_Selectlist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppPublic\Contorl\F_Func_Selectlist.Designer.cs">
-      <DependentUpon>F_Func_Selectlist.cs</DependentUpon>
-    </Compile>
     <Compile Include="AppPublic\Contorl\InitalControlHelper.cs" />
-    <Compile Include="AppPublic\Contorl\RoleByDepartment_SelectList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppPublic\Contorl\RoleByDepartment_SelectList.Designer.cs">
-      <DependentUpon>RoleByDepartment_SelectList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppPublic\Contorl\RoleByUser_Selectlist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppPublic\Contorl\RoleByUser_Selectlist.Designer.cs">
-      <DependentUpon>RoleByUser_Selectlist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppPublic\Contorl\F_UserForOu_Selectlist.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppPublic\Contorl\F_UserForOu_Selectlist.Designer.cs">
-      <DependentUpon>F_UserForOu_Selectlist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppPublic\Enum\AssetsStatus.cs" />
-    <Compile Include="AppPublic\Enum\FeatureButton.cs" />
-    <Compile Include="AppPublic\Finger\BitmapFormat.cs" />
-    <Compile Include="AppPublic\Finger\UserFingerAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppPublic\Finger\UserFingerAdd.Designer.cs">
-      <DependentUpon>UserFingerAdd.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppPublic\Finger\UserFingerMatching.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppPublic\Finger\UserFingerMatching.Designer.cs">
-      <DependentUpon>UserFingerMatching.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppPublic\Interface\IMainForm.cs" />
     <Compile Include="BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,8 +269,15 @@
     <Compile Include="SubForm\pgStatisticalAnalysis\AssetsStatusChangeForm.Designer.cs">
       <DependentUpon>AssetsStatusChangeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\clsControl\clsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utils\clsEnum\AssetsStatus.cs" />
     <Compile Include="Utils\clsEnum\FeatureButton.cs" />
+    <Compile Include="Utils\clsInterface\IMainForm.cs" />
+    <Compile Include="Utils\cls\clsLogs.cs" />
+    <Compile Include="Utils\cls\clsIniConfig.cs" />
+    <Compile Include="Utils\cls\BitmapFormat.cs" />
     <Compile Include="Utils\cls\clsnet.cs" />
     <Compile Include="SubForm\pageBaseinfo\FunctionForm.cs">
       <SubType>Form</SubType>
@@ -425,25 +391,43 @@
     </Compile>
     <Compile Include="Utils\cls\clsPublic.cs" />
     <Compile Include="Utils\cls\clsSession.cs" />
-    <Compile Include="Utils\cls\EnumHelper.cs" />
-    <EmbeddedResource Include="AppPublic\Contorl\F_Func_Selectlist.resx">
+    <Compile Include="Utils\cls\clsEnum.cs" />
+    <Compile Include="Utils\ToolForm\F_Func_Selectlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\F_Func_Selectlist.Designer.cs">
       <DependentUpon>F_Func_Selectlist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppPublic\Contorl\RoleByDepartment_SelectList.resx">
-      <DependentUpon>RoleByDepartment_SelectList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppPublic\Contorl\RoleByUser_Selectlist.resx">
-      <DependentUpon>RoleByUser_Selectlist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppPublic\Contorl\F_UserForOu_Selectlist.resx">
+    </Compile>
+    <Compile Include="Utils\ToolForm\F_UserForOu_Selectlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\F_UserForOu_Selectlist.Designer.cs">
       <DependentUpon>F_UserForOu_Selectlist.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppPublic\Finger\UserFingerAdd.resx">
+    </Compile>
+    <Compile Include="Utils\ToolForm\RoleByDepartment_SelectList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\RoleByDepartment_SelectList.Designer.cs">
+      <DependentUpon>RoleByDepartment_SelectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ToolForm\RoleByUser_Selectlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\RoleByUser_Selectlist.Designer.cs">
+      <DependentUpon>RoleByUser_Selectlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ToolForm\UserFingerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\UserFingerAdd.Designer.cs">
       <DependentUpon>UserFingerAdd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AppPublic\Finger\UserFingerMatching.resx">
+    </Compile>
+    <Compile Include="Utils\ToolForm\UserFingerMatching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\UserFingerMatching.Designer.cs">
       <DependentUpon>UserFingerMatching.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -543,6 +527,24 @@
     <EmbeddedResource Include="SubForm\pgStatisticalAnalysis\AssetsStatusChangeForm.resx">
       <DependentUpon>AssetsStatusChangeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\F_Func_Selectlist.resx">
+      <DependentUpon>F_Func_Selectlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\F_UserForOu_Selectlist.resx">
+      <DependentUpon>F_UserForOu_Selectlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\RoleByDepartment_SelectList.resx">
+      <DependentUpon>RoleByDepartment_SelectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\RoleByUser_Selectlist.resx">
+      <DependentUpon>RoleByUser_Selectlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\UserFingerAdd.resx">
+      <DependentUpon>UserFingerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\UserFingerMatching.resx">
+      <DependentUpon>UserFingerMatching.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\licenses.licx" />
     <EmbeddedResource Include="SubForm\pageBaseinfo\FunctionForm.resx">
       <DependentUpon>FunctionForm.cs</DependentUpon>
@@ -609,7 +611,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Utils\clsControl\" />
+    <Folder Include="Utils\Image\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RightingSys.BLL\RightingSys.BLL.csproj">
@@ -620,14 +622,6 @@
       <Project>{573722d7-dc67-48d9-9498-455ef282ede3}</Project>
       <Name>RightingSys.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="AppPublic\Image\logo2.ico" />
-    <Content Include="AppPublic\Image\logo4.ico" />
-    <Content Include="AppPublic\Image\logo3.ico" />
-    <Content Include="AppPublic\Image\logo1.ico" />
-    <Content Include="AppPublic\Image\logo.ico" />
-    <Content Include="Images\logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

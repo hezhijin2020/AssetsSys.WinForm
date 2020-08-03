@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RightingSys.WinForm.Utils.cls;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
@@ -55,12 +56,12 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         /// </summary>
         private void btnApprove_Click(object sender, System.EventArgs e)
         {
-            _model.OperatorId = AppPublic.appSession._UserId;
+            _model.OperatorId = clsSession._UserId;
             _model.IsAuditday = DateTime.Now;
             _model.IsAudit = true;
-            _model.OperatorName = AppPublic.appSession._FullName;
+            _model.OperatorName = clsSession._FullName;
             string msg = string.Format("本次盘点资产{0}件，已盘{1}件，盘差{2}件 --- 是否审核？", dtAll.Rows.Count, dtAll.Select("IsSelect=true").Length, dtAll.Select("IsSelect=false").Length);
-            if (AppPublic.appPublic.GetMessageBoxYesNoResult(msg))
+            if (clsPublic.GetMessageBoxYesNoResult(msg,Text))
             {
                 List<Models.ys_CheckOrderDeail> list = new List<Models.ys_CheckOrderDeail>();
                 DataTable Dt = dtAll.Copy();

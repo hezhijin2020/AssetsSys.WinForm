@@ -1,13 +1,9 @@
 ﻿using DevExpress.XtraTreeList.Nodes;
+using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using RightingSys.WinForm.AppPublic.Enum;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
@@ -61,7 +57,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                         {
                             if (deptMg.Delete(DepartmentId))
                             {
-                                RightingSys.Models.ACL_Department model = dtAll.Find(s => s.Id.Equals(AppPublic.appPublic.GetObjGUID(DepartmentId)));
+                                RightingSys.Models.ACL_Department model = dtAll.Find(s => s.Id.Equals(clsPublic.GetObjGUID(DepartmentId)));
                                 dtAll.Remove(model);
                                 tlDepartment.RefreshDataSource();
                                 tlPID.Properties.TreeList.RefreshDataSource();
@@ -100,10 +96,10 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                     return;
                 }
                 model.DepartmentName = txtName.Text.Trim();
-                model.ParentId = AppPublic.appPublic.GetObjGUID(tlPID.EditValue);
+                model.ParentId = clsPublic.GetObjGUID(tlPID.EditValue);
                 model.SimpleCode = txtHandNo.Text.Trim();
                 model.IsRemoved = false;
-                model.CreateTime = AppPublic.appPublic.ToDateTime(txtCreatTime.Text.Trim());
+                model.CreateTime = clsPublic.ToDateTime(txtCreatTime.Text.Trim());
                 model.SortCode = txtSortCode.Text;
      
 
@@ -113,7 +109,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                 //    model.Company_ID = model.ID;
                 //}
 
-                if (!AppPublic.appPublic.IsGuid(txtID.Text))
+                if (!clsPublic.IsGuid(txtID.Text))
                 {
                     model.Id = Guid.NewGuid();
                     if (deptMg.AddNew(model))
@@ -130,7 +126,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                 }
                 else
                 {
-                    model.Id = AppPublic.appPublic.GetObjGUID(txtID.Text);
+                    model.Id = clsPublic.GetObjGUID(txtID.Text);
                     if (deptMg.Modify(model))
                     {
                         tlDepartment.RefreshDataSource();
@@ -161,8 +157,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                txtSortCode.Text = model.SortCode;
                 tlPID.EditValue = model.ParentId;
 
-                //gcRole.DataSource = bll.GetRoleForOu(AppPublic.appPublic.GetObjGUID(ID));
-                //gcUser.DataSource = bll.GetUserForOu(AppPublic.appPublic.GetObjGUID(ID));
+                //gcRole.DataSource = bll.GetRoleForOu(clsPublic.GetObjGUID(ID));
+                //gcUser.DataSource = bll.GetUserForOu(clsPublic.GetObjGUID(ID));
 
                 if (node.GetValue("DepartmentName").ToString() != "株洲紫气东来商贸有限公司")
                 {

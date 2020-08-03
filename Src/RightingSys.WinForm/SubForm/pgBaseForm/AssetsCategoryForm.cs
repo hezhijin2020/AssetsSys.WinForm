@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraTreeList.Nodes;
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Collections.Generic;
 
@@ -34,27 +35,27 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
             {
                 if (node.Nodes.Count > 0)
                 {
-                    AppPublic.appPublic.ShowMessage("该功能下面有子类别，不能删除！", Text);
+                    clsPublic.ShowMessage("该功能下面有子类别，不能删除！", Text);
                 }
                 else
                 {
                     Guid Id = (Guid)node.GetValue("Id");
                     if (categoryManager.ExistsAssetsById(Id))
                     {
-                        AppPublic.appPublic.ShowMessage("该类别已被引用不能删除！！", Text);
+                        clsPublic.ShowMessage("该类别已被引用不能删除！！", Text);
                         return;
                     }
                     
-                    if (AppPublic.appPublic.GetMessageBoxYesNoResult("是否删除该类别，删除将不能恢复？", Text))
+                    if (clsPublic.GetMessageBoxYesNoResult("是否删除该类别，删除将不能恢复？", Text))
                     {
                         if (categoryManager.Delete(Id))
                         {
                             Query();
-                            AppPublic.appPublic.ShowMessage("删除成功！！", Text);
+                            clsPublic.ShowMessage("删除成功！！", Text);
                         }
                         else
                         {
-                            AppPublic.appPublic.ShowMessage("删除失败！！", Text);
+                            clsPublic.ShowMessage("删除失败！！", Text);
                         }
                     }
                 }
@@ -69,7 +70,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
         {
             if (txtFullName.Text.Trim() == "" || tlParentID.EditValue == null)
             {
-                AppPublic.appPublic.ShowMessage("名称和上级不能为空", Text);
+                clsPublic.ShowMessage("名称和上级不能为空", Text);
                 return;
             }
             model.ParentId = tlParentID.EditValue == null ? Guid.Empty : (Guid)tlParentID.EditValue;
@@ -80,19 +81,19 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
 
             if (model.Id == model.ParentId)
             {
-                AppPublic.appPublic.ShowMessage("节点的父节点不能为当前节点！", Text);
+                clsPublic.ShowMessage("节点的父节点不能为当前节点！", Text);
                 return;
             }
             if (IsAddNew && categoryManager.AddNew(model))
             {
-                AppPublic.appPublic.ShowMessage("新增成功", Text);
+                clsPublic.ShowMessage("新增成功", Text);
                 Query();
             }
             else
             {
                 if (categoryManager.Modify(model))
                 {
-                    AppPublic.appPublic.ShowMessage("修改成功", Text);
+                    clsPublic.ShowMessage("修改成功", Text);
                     Query();
                 }
             }

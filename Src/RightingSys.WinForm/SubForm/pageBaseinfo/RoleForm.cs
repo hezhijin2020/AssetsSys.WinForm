@@ -6,7 +6,8 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.clsEnum;
+using RightingSys.WinForm.Utils.cls;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
@@ -94,7 +95,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                 model.SortCode = txtSortCode.Text;
                 model.CreateTime = DateTime.Now;
 
-                if (!AppPublic.appPublic.IsGuid(txtID.Text))
+                if (!clsPublic.IsGuid(txtID.Text))
                 {
                     if (roleMg.ExistsRoleByName(txtName.Text.Trim()))
                     {
@@ -116,7 +117,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                 }
                 else
                 {
-                    model.Id = AppPublic.appPublic.GetObjGUID(txtID.Text);
+                    model.Id = clsPublic.GetObjGUID(txtID.Text);
                     if (roleMg.Modify(model))
                     {
                         tlFunc.RefreshDataSource();Query();
@@ -305,7 +306,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 
         private void sbtnUserRemove_Click(object sender, EventArgs e)
         {
-            Guid UserId = AppPublic.appPublic.GetObjGUID(gvUser.GetFocusedRowCellValue("UserId"));
+            Guid UserId = clsPublic.GetObjGUID(gvUser.GetFocusedRowCellValue("UserId"));
             if (RoleId != Guid.Empty && UserId != Guid.Empty)
             {
                 if (roleMg.DeleteUserByRoleId( RoleId,UserId))
@@ -351,7 +352,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 
         private void sbtnOURemove_Click(object sender, EventArgs e)
         {
-            Guid DepartmentId = AppPublic.appPublic.GetObjGUID(gvOU.GetFocusedRowCellValue("DepartmentId"));
+            Guid DepartmentId = clsPublic.GetObjGUID(gvOU.GetFocusedRowCellValue("DepartmentId"));
             if (RoleId != Guid.Empty && DepartmentId != Guid.Empty)
             {
                 if (roleMg.DeleteDepartmentByRoleId(RoleId, DepartmentId))

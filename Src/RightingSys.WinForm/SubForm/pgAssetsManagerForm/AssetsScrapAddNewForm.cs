@@ -1,4 +1,5 @@
-﻿using RightingSys.WinForm.Utils.clsEnum;
+﻿using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -43,7 +44,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 
             //仓库选择控件的初始化
             AppPublic.Control.InitalControlHelper.ys_AssetsStock_GridLookUpEdit(glu_FA_Stock);
-            txtUserName.Text = AppPublic.appSession._FullName;
+            txtUserName.Text = clsSession._FullName;
         }
 
         /// <summary>
@@ -66,10 +67,10 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 {
                     var model = new Models.ys_ScrapOrder();
                     model.ScrapNo = bll.GetNewScrapNo();//生成订单号
-                    model.ScrapUserId = AppPublic.appPublic.GetObjGUID(StaffID.EditValue);
+                    model.ScrapUserId = clsPublic.GetObjGUID(StaffID.EditValue);
                     model.ScrapUserName = StaffID.Text;
-                    model.OperatorId = AppPublic.appSession._UserId;
-                    model.OperatorName = AppPublic.appSession._FullName;
+                    model.OperatorId = clsSession._UserId;
+                    model.OperatorName = clsSession._FullName;
                     model.ScrapDescription = txt_Desc.Text;
                     model.Scrapday = bfday.DateTime;
                     model.IsAudit = true;
@@ -82,17 +83,17 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 //生成新的领用单
                 if (bll.AddNew(list))
                 {
-                    AppPublic.appPublic.ShowMessage("保存成功！", Text);
+                    clsPublic.ShowMessage("保存成功！", Text);
                     base.DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    AppPublic.appPublic.ShowMessage("保存失败！", Text);
+                    clsPublic.ShowMessage("保存失败！", Text);
                 }
             }
             else
             {
-                AppPublic.appPublic.ShowMessage("职员、或清理的资产信息不能为空！", Text);
+                clsPublic.ShowMessage("职员、或清理的资产信息不能为空！", Text);
             }
         }
 

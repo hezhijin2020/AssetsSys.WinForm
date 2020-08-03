@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using RightingSys.WinForm.AppPublic;
+using RightingSys.WinForm.Utils.cls;
 
 
 namespace RightingSys.WinForm.SubForm.pageSystem
@@ -49,28 +49,28 @@ namespace RightingSys.WinForm.SubForm.pageSystem
                 DataTable dataTable = _appRight.GetUserInfo(text, text2);
                 if (dataTable == null || dataTable.Rows.Count < 1)
                 {
-                    appPublic.ShowMessage("用户和密码错误", this.Text);
+                    clsPublic.ShowMessage("用户和密码错误", this.Text);
                     return false;
                 }
                 DataRow dataRow = dataTable.Rows[0];
 
-                appSession._UserId = appPublic.GetObjGUID(dataRow["Id"]);
-                appSession._LoginName = appPublic.GetObjectString(dataRow["LoginName"]);
-                appSession._FullName = appPublic.GetObjectString(dataRow["FullName"]);
-                //appSession._RoleID = appPublic.GetObjGUID(dataRow["RoleID"]);
-                //appSession._RoleName= appPublic.GetObjectString(dataRow["RoleName"]);
-                appSession._DepartmentId = appPublic.GetObjGUID(dataRow["DepartmentId"]);
-                appSession._DepartmentName= appPublic.GetObjectString(dataRow["DepartmentName"]);
+                clsSession._UserId = clsPublic.GetObjGUID(dataRow["Id"]);
+                clsSession._LoginName = clsPublic.GetObjectString(dataRow["LoginName"]);
+                clsSession._FullName = clsPublic.GetObjectString(dataRow["FullName"]);
+                //clsSession._RoleID = appPublic.GetObjGUID(dataRow["RoleID"]);
+                //clsSession._RoleName= appPublic.GetObjectString(dataRow["RoleName"]);
+                clsSession._DepartmentId = clsPublic.GetObjGUID(dataRow["DepartmentId"]);
+                clsSession._DepartmentName= clsPublic.GetObjectString(dataRow["DepartmentName"]);
 
                 return true;
-                //if (_appRight.BlackIPIsLogin(appSession._UserID))
+                //if (_appRight.BlackIPIsLogin(clsSession._UserID))
                 //{
                 //    appLogs.LogOpInfo("用户登录", DateTime.Now);
                 //    .UpdateLastLoginInf();
                 //    return true;
                 //}
                 //else {
-                //    appPublic.ShowMessage("规则拒绝该用户[" + appSession._LoginName + "]登录！", this.Text);
+                //    appPublic.ShowMessage("规则拒绝该用户[" + clsSession._LoginName + "]登录！", this.Text);
                 //    appLogs.LogOpInfo("规则拒绝该用户登录", DateTime.Now);
                 //    return false ;
                 //}
@@ -78,7 +78,7 @@ namespace RightingSys.WinForm.SubForm.pageSystem
             catch(Exception ex)
             {
                 //appLogs.LogError("登录出错", ex);
-                appPublic.ShowMessage("系统出错", this.Text);
+                clsPublic.ShowMessage("系统出错", this.Text);
                 return false;
             }
         }
@@ -150,14 +150,14 @@ namespace RightingSys.WinForm.SubForm.pageSystem
 
             if (CheckRemPwd.Checked)
             {
-                appIniConfig.IniWriteValue("UserConfig", "RemPwd", "1");
-                appIniConfig.IniWriteValue("UserConfig", "LoginName", txtLoginName.Text.Trim());
-                appIniConfig.IniWriteValueEncrypt("UserConfig", "LoginPwd", txtLoginPwd.Text.Trim());
+                clsIniConfig.IniWriteValue("UserConfig", "RemPwd", "1");
+                clsIniConfig.IniWriteValue("UserConfig", "LoginName", txtLoginName.Text.Trim());
+                clsIniConfig.IniWriteValueEncrypt("UserConfig", "LoginPwd", txtLoginPwd.Text.Trim());
             }
             else
             {
-                appIniConfig.IniWriteValue("UserConfig", "RemPwd", "0");
-                appIniConfig.IniWriteValue("UserConfig", "LoginName", txtLoginName.Text.Trim());
+                clsIniConfig.IniWriteValue("UserConfig", "RemPwd", "0");
+                clsIniConfig.IniWriteValue("UserConfig", "LoginName", txtLoginName.Text.Trim());
             }
         }
 
@@ -165,11 +165,11 @@ namespace RightingSys.WinForm.SubForm.pageSystem
         {
             try
             {
-                string IsRemPwd = appIniConfig.IniReadValue("UserConfig", "RemPwd", "");
-                txtLoginName.Text = appIniConfig.IniReadValue("UserConfig", "LoginName", "");
+                string IsRemPwd = clsIniConfig.IniReadValue("UserConfig", "RemPwd", "");
+                txtLoginName.Text = clsIniConfig.IniReadValue("UserConfig", "LoginName", "");
                 if (IsRemPwd == "1")
                 {
-                    txtLoginPwd.Text = appIniConfig.IniReadValueDecrypt("UserConfig", "LoginPwd", "");
+                    txtLoginPwd.Text = clsIniConfig.IniReadValueDecrypt("UserConfig", "LoginPwd", "");
                     CheckRemPwd.Checked = true;
                 }
                 else

@@ -58,23 +58,14 @@
             this.btnRoleSetup = new DevExpress.XtraBars.BarButtonItem();
             this.btnStockSetup = new DevExpress.XtraBars.BarButtonItem();
             this.btnSystemSetup = new DevExpress.XtraBars.BarButtonItem();
-            this.btnMenuManager = new DevExpress.XtraBars.BarButtonItem();
             this.StatusLoginName = new DevExpress.XtraBars.BarStaticItem();
             this.statusFullName = new DevExpress.XtraBars.BarStaticItem();
             this.statusLogintime = new DevExpress.XtraBars.BarStaticItem();
             this.statusIP = new DevExpress.XtraBars.BarStaticItem();
             this.statusMac = new DevExpress.XtraBars.BarStaticItem();
             this.skinRibbon = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
-            this.btnFiledRightingSetup = new DevExpress.XtraBars.BarButtonItem();
-            this.btnBlackIP = new DevExpress.XtraBars.BarButtonItem();
             this.btnAssetsManager = new DevExpress.XtraBars.BarButtonItem();
             this.btnAssetsApply = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.btnAssetsRefund = new DevExpress.XtraBars.BarButtonItem();
             this.btnAssetsBorrow = new DevExpress.XtraBars.BarButtonItem();
             this.btnAssetsReturn = new DevExpress.XtraBars.BarButtonItem();
@@ -95,10 +86,8 @@
             this.pageBaseinfo = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupBaseSetup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageSystemLogs = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.groupManager = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageStatisticalAnalysis = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageHelper = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -144,23 +133,14 @@
             this.btnRoleSetup,
             this.btnStockSetup,
             this.btnSystemSetup,
-            this.btnMenuManager,
             this.StatusLoginName,
             this.statusFullName,
             this.statusLogintime,
             this.statusIP,
             this.statusMac,
             this.skinRibbon,
-            this.btnFiledRightingSetup,
-            this.btnBlackIP,
             this.btnAssetsManager,
             this.btnAssetsApply,
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
             this.btnAssetsRefund,
             this.btnAssetsBorrow,
             this.btnAssetsReturn,
@@ -170,7 +150,7 @@
             this.btnAssetsCheck,
             this.btnStatusChange});
             this.MainRibbon.Location = new System.Drawing.Point(0, 0);
-            this.MainRibbon.MaxItemId = 38;
+            this.MainRibbon.MaxItemId = 1;
             this.MainRibbon.Name = "MainRibbon";
             this.MainRibbon.PageHeaderItemLinks.Add(this.skinRibbon);
             this.MainRibbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -462,17 +442,6 @@
             this.btnSystemSetup.Tag = "";
             this.btnSystemSetup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSystemSetup_ItemClick);
             // 
-            // btnMenuManager
-            // 
-            this.btnMenuManager.Caption = "菜单管理";
-            this.btnMenuManager.Id = 17;
-            this.btnMenuManager.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuManager.ImageOptions.Image")));
-            this.btnMenuManager.Name = "btnMenuManager";
-            this.btnMenuManager.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnMenuManager.Tag = "";
-            this.btnMenuManager.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMenuSetup_ItemClick);
-            // 
             // StatusLoginName
             // 
             this.StatusLoginName.Caption = "loginname";
@@ -488,6 +457,7 @@
             // statusLogintime
             // 
             this.statusLogintime.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.statusLogintime.Caption = "nowTime";
             this.statusLogintime.Id = 23;
             this.statusLogintime.Name = "statusLogintime";
             // 
@@ -518,28 +488,6 @@
             this.skinRibbon.Id = 26;
             this.skinRibbon.Name = "skinRibbon";
             // 
-            // btnFiledRightingSetup
-            // 
-            this.btnFiledRightingSetup.Caption = "角色字段权限";
-            this.btnFiledRightingSetup.Id = 27;
-            this.btnFiledRightingSetup.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnFiledRightingSetup.ImageOptions.Image")));
-            this.btnFiledRightingSetup.Name = "btnFiledRightingSetup";
-            this.btnFiledRightingSetup.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnFiledRightingSetup.Tag = "";
-            this.btnFiledRightingSetup.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnFiledRightingSetup_ItemClick);
-            // 
-            // btnBlackIP
-            // 
-            this.btnBlackIP.Caption = "黑白名单";
-            this.btnBlackIP.Id = 28;
-            this.btnBlackIP.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBlackIP.ImageOptions.Image")));
-            this.btnBlackIP.Name = "btnBlackIP";
-            this.btnBlackIP.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.btnBlackIP.Tag = "";
-            this.btnBlackIP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBlackIPorUser_ItemClick);
-            // 
             // btnAssetsManager
             // 
             this.btnAssetsManager.Caption = "资产登记";
@@ -560,42 +508,6 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnAssetsApply.Tag = "4356f030-df73-4d14-87fd-949486fbd24a";
             this.btnAssetsApply.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAssetsApply_ItemClick);
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barButtonItem2
-            // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.Name = "barButtonItem2";
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "barButtonItem3";
-            this.barButtonItem3.Id = 3;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "报餐统计";
-            this.barButtonItem4.Id = 27;
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
-            // barButtonItem5
-            // 
-            this.barButtonItem5.Caption = "barButtonItem5";
-            this.barButtonItem5.Id = 28;
-            this.barButtonItem5.Name = "barButtonItem5";
-            // 
-            // barButtonItem6
-            // 
-            this.barButtonItem6.Caption = "barButtonItem6";
-            this.barButtonItem6.Id = 29;
-            this.barButtonItem6.Name = "barButtonItem6";
             // 
             // btnAssetsRefund
             // 
@@ -763,8 +675,7 @@
             // 
             this.pageBaseinfo.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.groupBaseSetup,
-            this.ribbonPageGroup2,
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup2});
             this.pageBaseinfo.Name = "pageBaseinfo";
             this.pageBaseinfo.Tag = "96728174-312e-4151-a22f-cd8eed99b884";
             this.pageBaseinfo.Text = "基础信息";
@@ -784,19 +695,10 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "系统设置";
             // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnBlackIP);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnMenuManager);
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnFiledRightingSetup);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
-            // 
             // pageSystemLogs
             // 
             this.pageSystemLogs.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.groupManager,
-            this.ribbonPageGroup3});
+            this.groupManager});
             this.pageSystemLogs.Name = "pageSystemLogs";
             this.pageSystemLogs.Tag = "b579d89c-b1ef-43ed-a24f-3ed07146ebc2";
             this.pageSystemLogs.Text = "产资管理";
@@ -809,16 +711,11 @@
             this.groupManager.ItemLinks.Add(this.btnAssetsBorrow, true);
             this.groupManager.ItemLinks.Add(this.btnAssetsReturn);
             this.groupManager.ItemLinks.Add(this.btnAssetsAllot, true);
+            this.groupManager.ItemLinks.Add(this.btnAssetsScrap, true);
+            this.groupManager.ItemLinks.Add(this.btnAssetsRepair, true);
+            this.groupManager.ItemLinks.Add(this.btnAssetsCheck, true);
             this.groupManager.Name = "groupManager";
             this.groupManager.Text = "资产管理";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsScrap);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsRepair, true);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnAssetsCheck, true);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
             // pageStatisticalAnalysis
             // 
@@ -939,7 +836,6 @@
         private DevExpress.XtraBars.BarButtonItem btnRoleSetup;
         private DevExpress.XtraBars.BarButtonItem btnStockSetup;
         private DevExpress.XtraBars.BarButtonItem btnSystemSetup;
-        private DevExpress.XtraBars.BarButtonItem btnMenuManager;
         private DevExpress.XtraBars.Ribbon.RibbonPage pageSystemLogs;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupManager;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
@@ -950,8 +846,6 @@
         private DevExpress.XtraBars.BarStaticItem statusMac;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbon;
-        private DevExpress.XtraBars.BarButtonItem btnFiledRightingSetup;
-        private DevExpress.XtraBars.BarButtonItem btnBlackIP;
         private DevExpress.XtraBars.BarButtonItem btnAssetsManager;
         private DevExpress.XtraBars.BarButtonItem btnAssetsApply;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager tabMdiManager;
@@ -960,14 +854,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupFile;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupPrint;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup groupNavigation;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem btnAssetsRefund;
         private DevExpress.XtraBars.BarButtonItem btnAssetsBorrow;
         private DevExpress.XtraBars.BarButtonItem btnAssetsReturn;
@@ -975,7 +862,6 @@
         private DevExpress.XtraBars.BarButtonItem btnAssetsRepair;
         private DevExpress.XtraBars.BarButtonItem btnAssetsScrap;
         private DevExpress.XtraBars.BarButtonItem btnAssetsCheck;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPage pageStatisticalAnalysis;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem btnStatusChange;

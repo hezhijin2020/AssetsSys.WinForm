@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RightingSys.WinForm.Utils.cls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +26,7 @@ namespace RightingSys.WinForm.SubForm.pageSystem
 
         private void sbtnSave_Click(object sender, EventArgs e)
         {
-            Guid userid = AppPublic.appSession._UserId;
+            Guid userid = clsSession._UserId;
             string oldpwd = txtOldPwd.Text.Trim();
             string newpwd = txtNewPwd1.Text.Trim();
             if (oldpwd == "")
@@ -46,7 +47,7 @@ namespace RightingSys.WinForm.SubForm.pageSystem
                     if (_appRight.ModifyUserPwd(userid, oldpwd, newpwd))
                     {
                         MessageBox.Show("密码修改成功！", Text);
-                        AppPublic.appLogs.LogOpInfo("修改密码",DateTime.Now);
+                        clsLogs.LogOpInfo("修改密码",DateTime.Now);
                         this.Close();
                     }
                     else

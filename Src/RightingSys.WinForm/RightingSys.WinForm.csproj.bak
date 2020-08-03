@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8A85B688-3F86-4829-82A9-CCBDD4E6C4FD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RightingSys.WinForm</RootNamespace>
+    <AssemblyName>AssetsSys</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.2.Export, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v17.2.UI, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v17.2.Extensions, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v17.2.Core, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="libzkfpcsharp, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\libzkfpcsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\常用DLL\Log4net\4.0\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppPublic\AutoService\FileUnit.cs" />
+    <Compile Include="AppPublic\AutoService\IniFiles.cs" />
+    <Compile Include="AppPublic\AutoService\XMLFile.cs" />
+    <Compile Include="AppPublic\AutoService\XmlFiles.cs" />
+    <Compile Include="AppPublic\Contorl\InitalControlHelper.cs" />
+    <Compile Include="BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevReport\rptCheckOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptCheckOrder.Designer.cs">
+      <DependentUpon>rptCheckOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevReport\rptScrapOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptScrapOrder.Designer.cs">
+      <DependentUpon>rptScrapOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevReport\rptAllotOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptAllotOrder.Designer.cs">
+      <DependentUpon>rptAllotOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevReport\rptRepairOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptRepairOrder.Designer.cs">
+      <DependentUpon>rptRepairOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevReport\rptBorrowOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptBorrowOrder.Designer.cs">
+      <DependentUpon>rptBorrowOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevReport\rptReturnOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptReturnOrder.Designer.cs">
+      <DependentUpon>rptReturnOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevReport\rptRefundOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptRefundOrder.Designer.cs">
+      <DependentUpon>rptRefundOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevReport\rptApplyOrder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DevReport\rptApplyOrder.Designer.cs">
+      <DependentUpon>rptApplyOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsAllotEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsAllotEditForm.designer.cs">
+      <DependentUpon>AssetsAllotEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsAllotForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsAllotForm.designer.cs">
+      <DependentUpon>AssetsAllotForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckApproveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckApproveForm.Designer.cs">
+      <DependentUpon>AssetsCheckApproveForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsBorrowEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsBorrowEditForm.designer.cs">
+      <DependentUpon>AssetsBorrowEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckEditForm.Designer.cs">
+      <DependentUpon>AssetsCheckEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsCheckForm.Designer.cs">
+      <DependentUpon>AssetsCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsReturnEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsReturnEditForm.designer.cs">
+      <DependentUpon>AssetsReturnEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRefundEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRefundEditForm.designer.cs">
+      <DependentUpon>AssetsRefundEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsBorrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsBorrowForm.designer.cs">
+      <DependentUpon>AssetsBorrowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsReturnForm.designer.cs">
+      <DependentUpon>AssetsReturnForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRefundForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRefundForm.designer.cs">
+      <DependentUpon>AssetsRefundForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairForm.Designer.cs">
+      <DependentUpon>AssetsRepairForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairFinishForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairFinishForm.Designer.cs">
+      <DependentUpon>AssetsRepairFinishForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNewForm.Designer.cs">
+      <DependentUpon>AssetsRepairAddNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapForm.Designer.cs">
+      <DependentUpon>AssetsScrapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapAddNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsScrapAddNewForm.Designer.cs">
+      <DependentUpon>AssetsScrapAddNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgStatisticalAnalysis\AssetsStatusChangeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgStatisticalAnalysis\AssetsStatusChangeForm.Designer.cs">
+      <DependentUpon>AssetsStatusChangeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\clsControl\clsGridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\clsEnum\AssetsStatus.cs" />
+    <Compile Include="Utils\clsEnum\FeatureButton.cs" />
+    <Compile Include="Utils\clsInterface\IMainForm.cs" />
+    <Compile Include="Utils\cls\clsLogs.cs" />
+    <Compile Include="Utils\cls\clsIniConfig.cs" />
+    <Compile Include="Utils\cls\BitmapFormat.cs" />
+    <Compile Include="Utils\cls\clsnet.cs" />
+    <Compile Include="SubForm\pageBaseinfo\FunctionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\FunctionForm.Designer.cs">
+      <DependentUpon>FunctionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\SystemVersionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\SystemVersionForm.Designer.cs">
+      <DependentUpon>SystemVersionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\DepartmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\DepartmentForm.Designer.cs">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\RoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\RoleForm.Designer.cs">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\SystemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\SystemForm.Designer.cs">
+      <DependentUpon>SystemForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\SystemEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\SystemEditForm.Designer.cs">
+      <DependentUpon>SystemEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\UserEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageBaseinfo\UserEditForm.Designer.cs">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pageSystem\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageSystem\LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaimForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaimForm.Designer.cs">
+      <DependentUpon>MaimForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubForm\pageSystem\FModifyUserPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pageSystem\FModifyUserPwd.Designer.cs">
+      <DependentUpon>FModifyUserPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsForm.designer.cs">
+      <DependentUpon>AssetsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsEditForm.designer.cs">
+      <DependentUpon>AssetsEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsApplyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsApplyForm.designer.cs">
+      <DependentUpon>AssetsApplyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsApplyEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgAssetsManagerForm\AssetsApplyEditForm.designer.cs">
+      <DependentUpon>AssetsApplyEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgBaseForm\AssetsStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgBaseForm\AssetsStockForm.designer.cs">
+      <DependentUpon>AssetsStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgBaseForm\AssetsCategoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgBaseForm\AssetsCategoryForm.designer.cs">
+      <DependentUpon>AssetsCategoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\pgBaseForm\CompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\pgBaseForm\CompanyForm.designer.cs">
+      <DependentUpon>CompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\cls\clsPublic.cs" />
+    <Compile Include="Utils\cls\clsSession.cs" />
+    <Compile Include="Utils\cls\clsEnum.cs" />
+    <Compile Include="Utils\ToolForm\F_Func_Selectlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\F_Func_Selectlist.Designer.cs">
+      <DependentUpon>F_Func_Selectlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ToolForm\F_UserForOu_Selectlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\F_UserForOu_Selectlist.Designer.cs">
+      <DependentUpon>F_UserForOu_Selectlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ToolForm\RoleByDepartment_SelectList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\RoleByDepartment_SelectList.Designer.cs">
+      <DependentUpon>RoleByDepartment_SelectList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ToolForm\RoleByUser_Selectlist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\RoleByUser_Selectlist.Designer.cs">
+      <DependentUpon>RoleByUser_Selectlist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ToolForm\UserFingerAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\UserFingerAdd.Designer.cs">
+      <DependentUpon>UserFingerAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ToolForm\UserFingerMatching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Utils\ToolForm\UserFingerMatching.Designer.cs">
+      <DependentUpon>UserFingerMatching.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptCheckOrder.resx">
+      <DependentUpon>rptCheckOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptScrapOrder.resx">
+      <DependentUpon>rptScrapOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptAllotOrder.resx">
+      <DependentUpon>rptAllotOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptRepairOrder.resx">
+      <DependentUpon>rptRepairOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptBorrowOrder.resx">
+      <DependentUpon>rptBorrowOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptReturnOrder.resx">
+      <DependentUpon>rptReturnOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptRefundOrder.resx">
+      <DependentUpon>rptRefundOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevReport\rptApplyOrder.resx">
+      <DependentUpon>rptApplyOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsAllotEditForm.resx">
+      <DependentUpon>AssetsAllotEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsAllotForm.resx">
+      <DependentUpon>AssetsAllotForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsCheckApproveForm.resx">
+      <DependentUpon>AssetsCheckApproveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsBorrowEditForm.resx">
+      <DependentUpon>AssetsBorrowEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsCheckEditForm.resx">
+      <DependentUpon>AssetsCheckEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsCheckForm.resx">
+      <DependentUpon>AssetsCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsReturnEditForm.resx">
+      <DependentUpon>AssetsReturnEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRefundEditForm.resx">
+      <DependentUpon>AssetsRefundEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsForm.resx">
+      <DependentUpon>AssetsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsEditForm.resx">
+      <DependentUpon>AssetsEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsApplyForm.resx">
+      <DependentUpon>AssetsApplyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsApplyEditForm.resx">
+      <DependentUpon>AssetsApplyEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsBorrowForm.resx">
+      <DependentUpon>AssetsBorrowForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsReturnForm.resx">
+      <DependentUpon>AssetsReturnForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRefundForm.resx">
+      <DependentUpon>AssetsRefundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairForm.resx">
+      <DependentUpon>AssetsRepairForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairFinishForm.resx">
+      <DependentUpon>AssetsRepairFinishForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsRepairAddNewForm.resx">
+      <DependentUpon>AssetsRepairAddNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsScrapForm.resx">
+      <DependentUpon>AssetsScrapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgAssetsManagerForm\AssetsScrapAddNewForm.resx">
+      <DependentUpon>AssetsScrapAddNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgBaseForm\AssetsStockForm.resx">
+      <DependentUpon>AssetsStockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgBaseForm\AssetsCategoryForm.resx">
+      <DependentUpon>AssetsCategoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgBaseForm\CompanyForm.resx">
+      <DependentUpon>CompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pgStatisticalAnalysis\AssetsStatusChangeForm.resx">
+      <DependentUpon>AssetsStatusChangeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\F_Func_Selectlist.resx">
+      <DependentUpon>F_Func_Selectlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\F_UserForOu_Selectlist.resx">
+      <DependentUpon>F_UserForOu_Selectlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\RoleByDepartment_SelectList.resx">
+      <DependentUpon>RoleByDepartment_SelectList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\RoleByUser_Selectlist.resx">
+      <DependentUpon>RoleByUser_Selectlist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\UserFingerAdd.resx">
+      <DependentUpon>UserFingerAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\ToolForm\UserFingerMatching.resx">
+      <DependentUpon>UserFingerMatching.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="SubForm\pageBaseinfo\FunctionForm.resx">
+      <DependentUpon>FunctionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pageBaseinfo\SystemVersionForm.resx">
+      <DependentUpon>SystemVersionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pageBaseinfo\DepartmentForm.resx">
+      <DependentUpon>DepartmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pageBaseinfo\RoleForm.resx">
+      <DependentUpon>RoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pageBaseinfo\SystemForm.resx">
+      <DependentUpon>SystemForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pageBaseinfo\SystemEditForm.resx">
+      <DependentUpon>SystemEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pageBaseinfo\UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pageBaseinfo\UserEditForm.resx">
+      <DependentUpon>UserEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\pageSystem\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaimForm.resx">
+      <DependentUpon>MaimForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SubForm\pageSystem\FModifyUserPwd.resx">
+      <DependentUpon>FModifyUserPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utils\Image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RightingSys.BLL\RightingSys.BLL.csproj">
+      <Project>{02858f09-9e1d-4ec2-abec-d3345cbf18eb}</Project>
+      <Name>RightingSys.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RightingSys.Models\RightingSys.Models.csproj">
+      <Project>{573722d7-dc67-48d9-9498-455ef282ede3}</Project>
+      <Name>RightingSys.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

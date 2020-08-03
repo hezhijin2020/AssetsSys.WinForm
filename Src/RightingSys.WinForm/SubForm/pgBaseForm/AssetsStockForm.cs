@@ -1,13 +1,6 @@
-﻿
-using RightingSys.WinForm.AppPublic.Enum;
+﻿using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
 {
@@ -42,18 +35,18 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
                 Guid ID = (Guid)gvData.GetFocusedRowCellValue("Id");
                 if (StockManager.ExistsAssetsById(ID))
                 {
-                    AppPublic.appPublic.ShowMessage("已被引用不能删除！", Text);return;
+                    clsPublic.ShowMessage("已被引用不能删除！", Text);return;
                 }
-                if (AppPublic.appPublic.GetMessageBoxYesNoResult("是否删除，删除将不能恢复？", Text))
+                if (clsPublic.GetMessageBoxYesNoResult("是否删除，删除将不能恢复？", Text))
                 {
                     if (StockManager.Delete(ID))
                     {
                         Query();
-                        AppPublic.appPublic.ShowMessage("删除成功！！", Text);
+                        clsPublic.ShowMessage("删除成功！！", Text);
                     }
                     else
                     {
-                        AppPublic.appPublic.ShowMessage("删除失败！！", Text);
+                        clsPublic.ShowMessage("删除失败！！", Text);
                     }
                 }
 
@@ -69,7 +62,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
         {
             if (txtStockName.Text.Trim() == "")
             {
-                AppPublic.appPublic.ShowMessage("名称不能为空", Text);
+                clsPublic.ShowMessage("名称不能为空", Text);
                 return;
             }
             model.StockName = txtStockName.Text.Trim();
@@ -77,14 +70,14 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
             model.ManagerName = cboxMgUser.Text;
             if (IsAddNew && StockManager.AddNew(model))
             {
-                AppPublic.appPublic.ShowMessage("新增成功", Text);
+                clsPublic.ShowMessage("新增成功", Text);
                 Query();
             }
             else
             {
                 if (StockManager.Modify(model))
                 {
-                    AppPublic.appPublic.ShowMessage("修改成功", Text);
+                    clsPublic.ShowMessage("修改成功", Text);
                     Query();
                 }
             }
@@ -98,7 +91,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
                 txtStockName.Focus();
                 txtID.EditValue = model.Id = (Guid)gvData.GetFocusedRowCellValue("Id");
                 txtStockName.Text = model.StockName = gvData.GetFocusedRowCellValue("StockName").ToString();
-                cboxMgUser.EditValue = model.ManagerId = AppPublic.appPublic.GetObjGUID(gvData.GetFocusedRowCellValue("ManagerId"));
+                cboxMgUser.EditValue = model.ManagerId = clsPublic.GetObjGUID(gvData.GetFocusedRowCellValue("ManagerId"));
 
             }
         }

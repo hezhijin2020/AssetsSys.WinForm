@@ -1,4 +1,6 @@
-﻿using RightingSys.WinForm.Utils.clsEnum;
+﻿using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
+using RightingSys.WinForm.Utils.ToolForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,7 +49,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             //仓库选择控件的初始化
             AppPublic.Control.InitalControlHelper.ys_AssetsStock_GridLookUpEdit(cbStock);
             cbStock.EditValue = 1;//设置默认值
-            tEditUser.Text = AppPublic.appSession._FullName;
+            tEditUser.Text = clsSession._FullName;
         }
 
         /// <summary>
@@ -71,19 +73,19 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 
                 model.Location = tlocation.Text;
 
-                model.AllotUserId = AppPublic.appPublic.GetObjGUID(cbUser.EditValue);
+                model.AllotUserId = clsPublic.GetObjGUID(cbUser.EditValue);
                 model.AllotUserName = cbUser.Text;
                 if (cbtlDepartment.EditValue == null)
                 {
-                    model.AllotDepartmentId = AppPublic.appPublic.GetObjGUID(cbUser.Properties.View.GetFocusedRowCellValue("DepartmentId"));
+                    model.AllotDepartmentId = clsPublic.GetObjGUID(cbUser.Properties.View.GetFocusedRowCellValue("DepartmentId"));
                 }
                 else
                 {
-                    model.AllotDepartmentId = AppPublic.appPublic.GetObjGUID(cbtlDepartment.EditValue);
+                    model.AllotDepartmentId = clsPublic.GetObjGUID(cbtlDepartment.EditValue);
                 }
 
-                model.OperatorId = AppPublic.appSession._UserId;
-                model.OperatorName = AppPublic.appSession._FullName;
+                model.OperatorId = clsSession._UserId;
+                model.OperatorName = clsSession._FullName;
                 model.Description = tDescription.Text;
                 model.Allotday = tApplyday.DateTime;
                 model.Detail = new List<Models.ys_AllotOrderDetail>();
@@ -104,17 +106,17 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 //生成新的领用单
                 if (manager.AddNew(model))
                 {
-                    AppPublic.appPublic.ShowMessage("保存成功！", Text);
+                    clsPublic.ShowMessage("保存成功！", Text);
                     base.DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    AppPublic.appPublic.ShowMessage("保存失败！", Text);
+                    clsPublic.ShowMessage("保存失败！", Text);
                 }
             }
             else
             {
-                AppPublic.appPublic.ShowMessage("部门、职员、或资产信息不能为空！", Text);
+                clsPublic.ShowMessage("部门、职员、或资产信息不能为空！", Text);
             }
         }
         /// <summary>
@@ -171,7 +173,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         /// </summary>
         private void cbUser_Click(object sender, EventArgs e)
         {
-            AppPublic.Finger.UserFingerMatching sub = new AppPublic.Finger.UserFingerMatching();
+            UserFingerMatching sub = new UserFingerMatching();
 
             if (sub.ShowDialog() == DialogResult.OK)
             {

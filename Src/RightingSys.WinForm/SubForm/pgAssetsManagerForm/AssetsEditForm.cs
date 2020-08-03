@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Xml;
 using System.Windows.Forms;
+using RightingSys.WinForm.Utils.cls;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 {
@@ -76,8 +77,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                     lyModel.ApplyDepartmentId = Utils.cls.clsPublic.GetObjGUID(cbtlDepartment.EditValue);
                 }
 
-                lyModel.OperatorId = AppPublic.appSession._UserId;
-                lyModel.OperatorName = AppPublic.appSession._FullName;
+                lyModel.OperatorId = clsSession._UserId;
+                lyModel.OperatorName = clsSession._FullName;
                 lyModel.Description = "登记时生成";
                 lyModel.Applyday = DateTime.Now;
 
@@ -94,11 +95,11 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 //生成新的领用单
                 if (applyOrderManager.AddNew(lyModel))
                 {
-                    AppPublic.appPublic.ShowMessage("领用单生成成功！", Text);
+                    clsPublic.ShowMessage("领用单生成成功！", Text);
                 }
                 else
                 {
-                    AppPublic.appPublic.ShowMessage("领用单生成失败！", Text);
+                    clsPublic.ShowMessage("领用单生成失败！", Text);
                 }
             }
         }
@@ -150,12 +151,12 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                     if (assetsManager.AddNew(model))
                     {
                         base.DialogResult = DialogResult.OK;
-                        AppPublic.appPublic.ShowMessage("保存成功", Text);
+                        clsPublic.ShowMessage("保存成功", Text);
                         AddLyOrder();
                     }
                     else
                     {
-                        AppPublic.appPublic.ShowMessage("失败", Text);
+                        clsPublic.ShowMessage("失败", Text);
                     }
                 }
                 else
@@ -163,11 +164,11 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                     if (assetsManager.Modify(model))
                     {
                         base.DialogResult = DialogResult.OK;
-                        AppPublic.appPublic.ShowMessage("成功", Text);
+                        clsPublic.ShowMessage("成功", Text);
                     }
                     else
                     {
-                        AppPublic.appPublic.ShowMessage("失败", Text);
+                        clsPublic.ShowMessage("失败", Text);
                     }
 
                 }
@@ -188,8 +189,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             {
                 foreach (DataRow r in dtXmlInf.Rows)
                 {
-                    sFieldName = AppPublic.appPublic.GetObjectString(r["FieldName"]);
-                    sFieldValue = AppPublic.appPublic.GetObjectString(r["FieldValue"]);
+                    sFieldName = clsPublic.GetObjectString(r["FieldName"]);
+                    sFieldValue = clsPublic.GetObjectString(r["FieldValue"]);
                     if (sFieldName != "" && sFieldValue != "")
                     {
                         row.SetAttribute(sFieldName, sFieldValue);
@@ -229,19 +230,19 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         {
             if (txt_FA_Name.Text.Trim() != "" && cbtlCategory.EditValue != null && txt_FA_Model.Text.Trim() != "")
             {
-                model.OperatorId = AppPublic.appSession._UserId;
-                model.OperatorName = AppPublic.appSession._FullName;
+                model.OperatorId = clsSession._UserId;
+                model.OperatorName = clsSession._FullName;
                 model.CreateTime = model.Buyday = d_Buytime.DateTime;
-                model.DepartmentId = AppPublic.appPublic.GetObjGUID(cbtlDepartment);
+                model.DepartmentId = clsPublic.GetObjGUID(cbtlDepartment);
                 model.Description = txt_FA_Desc.Text;
                 model.Location = cblocation.Text;
                 model.Model = txt_FA_Model.Text;
                 model.Name = txt_FA_Name.Text;
-                model.Price = AppPublic.appPublic.ToDecimal(txtPrice.Text);
-                model.UserId = AppPublic.appPublic.GetObjGUID(cbUser.EditValue);
-                model.StockId = AppPublic.appPublic.GetObjGUID(cbStock.EditValue);
-                model.CompanyId = AppPublic.appPublic.GetObjGUID(cbCompany.EditValue);
-                model.CategoryId = AppPublic.appPublic.GetObjGUID(cbtlCategory.EditValue);
+                model.Price = clsPublic.ToDecimal(txtPrice.Text);
+                model.UserId = clsPublic.GetObjGUID(cbUser.EditValue);
+                model.StockId = clsPublic.GetObjGUID(cbStock.EditValue);
+                model.CompanyId = clsPublic.GetObjGUID(cbCompany.EditValue);
+                model.CategoryId = clsPublic.GetObjGUID(cbtlCategory.EditValue);
                 model.Barcode=  txt_Barcode.Text == "" ? assetsManager.GetNewBarcode() : txt_Barcode.Text;
                 if (txt_Barcode.Text == "")
                 {
@@ -253,7 +254,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             }
             else
             {
-                AppPublic.appPublic.ShowMessage("信息输入不全", Text);
+                clsPublic.ShowMessage("信息输入不全", Text);
                 return false;
             }
         }

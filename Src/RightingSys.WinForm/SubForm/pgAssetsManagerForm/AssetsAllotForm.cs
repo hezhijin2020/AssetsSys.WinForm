@@ -1,5 +1,5 @@
 ﻿using DevExpress.XtraReports.UI;
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Windows.Forms;
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm

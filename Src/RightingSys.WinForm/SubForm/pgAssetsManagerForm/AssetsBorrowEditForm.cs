@@ -1,4 +1,6 @@
-﻿using RightingSys.WinForm.Utils.clsEnum;
+﻿using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
+using RightingSys.WinForm.Utils.ToolForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,7 +48,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             AppPublic.Control.InitalControlHelper.ys_AssetsStock_GridLookUpEdit(cbStock);
             cbStock.EditValue = "6494f577-cc6f-464e-bf9a-a2c684013cce";//设置默认值
             cbStock.Enabled = false;
-            tEditUser.Text = AppPublic.appSession._FullName;
+            tEditUser.Text = clsSession._FullName;
         }
 
         /// <summary>
@@ -66,11 +68,11 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             {
                 model.Id = Guid.NewGuid();
                 model.BorrowNo = manager.GetNewBorrowNo();
-                model.BorrowUserId = AppPublic.appPublic.GetObjGUID(cbUser.EditValue);
+                model.BorrowUserId = clsPublic.GetObjGUID(cbUser.EditValue);
                 model.BorrowUserName = cbUser.Text;
                 model.BorrowDepartmentId = userList.FirstOrDefault(a => a.Id == model.BorrowUserId).DepartmentId;
-                model.OperatorId = AppPublic.appSession._UserId;
-                model.OperatorName = AppPublic.appSession._FullName;
+                model.OperatorId = clsSession._UserId;
+                model.OperatorName = clsSession._FullName;
                 model.Description = tDescription.Text;
                 model.Borrowday = tBorrowday.DateTime;
                 model.Planday = tPlenday.DateTime;
@@ -94,17 +96,17 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 //生成新的领用单
                 if (manager.AddNew(model))
                 {
-                    AppPublic.appPublic.ShowMessage("保存成功！", Text);
+                  clsPublic.ShowMessage("保存成功！", Text);
                     base.DialogResult = DialogResult.OK;
                 }
                 else
                 {
-                    AppPublic.appPublic.ShowMessage("保存失败！", Text);
+                    clsPublic.ShowMessage("保存失败！", Text);
                 }
             }
             else
             {
-                AppPublic.appPublic.ShowMessage("借用人员、或借用的资产信息不能为空！", Text);
+                clsPublic.ShowMessage("借用人员、或借用的资产信息不能为空！", Text);
             }
         }
         /// <summary>
@@ -142,7 +144,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         /// </summary>
         private void cbUser_Click(object sender, EventArgs e)
         {
-            AppPublic.Finger.UserFingerMatching sub = new AppPublic.Finger.UserFingerMatching();
+            UserFingerMatching sub = new UserFingerMatching();
 
             if (sub.ShowDialog() == DialogResult.OK)
             {

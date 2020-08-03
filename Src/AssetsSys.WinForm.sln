@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1062
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RightingSys.BLL", "RightingSys.BLL\RightingSys.BLL.csproj", "{02858F09-9E1D-4EC2-ABEC-D3345CBF18EB}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RightingSys.Models", "RightingSys.Models\RightingSys.Models.csproj", "{573722D7-DC67-48D9-9498-455EF282EDE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RightingSys.WinForm", "RightingSys.WinForm\RightingSys.WinForm.csproj", "{8A85B688-3F86-4829-82A9-CCBDD4E6C4FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RightingSys.Web", "RightingSys.Web\RightingSys.Web.csproj", "{4D0F2590-EF0F-445C-B413-55E555CF911B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{8A85B688-3F86-4829-82A9-CCBDD4E6C4FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A85B688-3F86-4829-82A9-CCBDD4E6C4FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A85B688-3F86-4829-82A9-CCBDD4E6C4FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D0F2590-EF0F-445C-B413-55E555CF911B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D0F2590-EF0F-445C-B413-55E555CF911B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D0F2590-EF0F-445C-B413-55E555CF911B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D0F2590-EF0F-445C-B413-55E555CF911B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

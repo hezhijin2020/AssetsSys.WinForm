@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraTreeList.Nodes;
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -42,18 +43,18 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
                 Guid Id = (Guid)gvData.GetFocusedRowCellValue("Id");
                 if (companyManager.ExistsAssetsById(Id))
                 {
-                    AppPublic.appPublic.ShowMessage("仓库已被引用不能删数！", Text);return;
+                    clsPublic.ShowMessage("仓库已被引用不能删数！", Text);return;
                 }
-                if (AppPublic.appPublic.GetMessageBoxYesNoResult("是否删除，删除将不能恢复？", Text))
+                if (clsPublic.GetMessageBoxYesNoResult("是否删除，删除将不能恢复？", Text))
                 {
                     if (companyManager.Delete(Id))
                     {
                         Query();
-                        AppPublic.appPublic.ShowMessage("删除成功！！", Text);
+                        clsPublic.ShowMessage("删除成功！！", Text);
                     }
                     else
                     {
-                        AppPublic.appPublic.ShowMessage("删除失败！！", Text);
+                        clsPublic.ShowMessage("删除失败！！", Text);
                     }
                 }
             }
@@ -66,7 +67,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
         {
             if (txtFullName.Text.Trim() == "" || txtPersonName.Text.Trim() == null || txtTell.Text.Trim() == "")
             {
-                AppPublic.appPublic.ShowMessage("名称、联系人、电话不能为空", Text);
+                clsPublic.ShowMessage("名称、联系人、电话不能为空", Text);
                 return;
             }
             model.Address = txtAddress.Text;
@@ -80,7 +81,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
                 txtID.EditValue = model.Id = Guid.NewGuid();
                 if(companyManager.AddNew(model))
                 {
-                    AppPublic.appPublic.ShowMessage("新增成功", Text);
+                    clsPublic.ShowMessage("新增成功", Text);
                     Query();
                 }
             }
@@ -88,7 +89,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pgBaseForm
             {
                 if (companyManager.Modify(model))
                 {
-                    AppPublic.appPublic.ShowMessage("修改成功", Text);
+                    clsPublic.ShowMessage("修改成功", Text);
                     Query();
                 }
             }

@@ -27,14 +27,22 @@ namespace RightingSys.WinForm.Utils.cls
 {
     public static class clsPublic
     {
+
+
+        public static bool IsDataTableChanged(DataTable dt)
+        {
+            DataTable changes = dt.GetChanges(DataRowState.Added | DataRowState.Deleted | DataRowState.Modified);
+            return changes != null && changes.Rows.Count != 0;
+        }
+
         #region 枚举常用方法
 
-         /// <summary>
-         /// 列举所有枚举值和描述
-         /// </summary>
-         /// <typeparam name="T">泛型枚举</typeparam>
-         /// <returns></returns>
-         public static Dictionary<int, string> GetDescriptionDictionary<T>() where T : struct
+        /// <summary>
+        /// 列举所有枚举值和描述
+        /// </summary>
+        /// <typeparam name="T">泛型枚举</typeparam>
+        /// <returns></returns>
+        public static Dictionary<int, string> GetDescriptionDictionary<T>() where T : struct
          {
              Type type = typeof(T);
              Dictionary<int, string> dictionary = new Dictionary<int, string>();

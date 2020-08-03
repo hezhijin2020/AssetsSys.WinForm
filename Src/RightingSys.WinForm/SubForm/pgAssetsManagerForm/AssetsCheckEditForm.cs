@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RightingSys.WinForm.Utils.cls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         {
             InitializeComponent();
             Checkday.EditValue = DateTime.Now;
-            txtOperatorName.Text = AppPublic.appSession._FullName;
+            txtOperatorName.Text = clsSession._FullName;
         }
 
         /// <summary>
@@ -95,8 +96,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             if (e.Column.FieldName == "IsSelect")
             {
                 object time = DateTime.Now;
-                object userid = AppPublic.appSession._UserId;
-                object username = AppPublic.appSession._FullName;
+                object userid = clsSession._UserId;
+                object username = clsSession._FullName;
                 if (!(bool)e.Value)
                 {
                     time = null;userid = null;username = null;
@@ -113,7 +114,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         /// </summary>
         private void AssetsCheckEditForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (AppPublic.appPublic.IsDataTableChanged(dtAll))
+            if (clsPublic.IsDataTableChanged(dtAll))
             {
                 if (DialogResult.Yes == MessageBox.Show("数据是否保存？", "询问", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 {
@@ -127,7 +128,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         /// </summary>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (AppPublic.appPublic.IsDataTableChanged(dtAll))
+            if (clsPublic.IsDataTableChanged(dtAll))
             {
                 DataTable Dt = dtAll.Copy();
                 Dt.DefaultView.RowFilter = "IsSelect=true";

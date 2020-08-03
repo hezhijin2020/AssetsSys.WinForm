@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraReports.UI;
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System.Windows.Forms;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
@@ -46,7 +47,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         /// </summary>
         public override void Export()
         {
-            AppPublic.appPublic.DevExprot(gcData);
+            clsPublic.DevExprot(gcData);
         }
 
         /// <summary>

@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraReports.UI;
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -83,7 +84,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 {
                     if (!(bool)gvData.GetFocusedRowCellValue("IsFinish"))
                     {
-                        Guid ID = AppPublic.appPublic.GetObjGUID(gvData.GetFocusedRowCellValue("Id"));
+                        Guid ID = clsPublic.GetObjGUID(gvData.GetFocusedRowCellValue("Id"));
                         AssetsRepairFinishForm sub = new AssetsRepairFinishForm(ID);
                         if (sub.ShowDialog() == DialogResult.OK)
                         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RightingSys.WinForm.Utils.cls;
+using System;
 using System.Windows.Forms;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
@@ -51,7 +52,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 
             if (txtsysID.Text == "新Id")
             {
-                model.Id = AppPublic.appPublic.GetObjGUID(txtsysID.Text);
+                model.Id = clsPublic.GetObjGUID(txtsysID.Text);
                 count = systemMg.AddNew(model);
                 MessageBox.Show("新增成功！", Text);
             }

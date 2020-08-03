@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.clsEnum;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {

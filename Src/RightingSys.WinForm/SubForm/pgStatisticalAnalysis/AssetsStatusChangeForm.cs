@@ -1,4 +1,6 @@
-﻿using RightingSys.WinForm.AppPublic.Enum;
+﻿
+
+using RightingSys.WinForm.Utils.clsEnum;
 
 namespace RightingSys.WinForm.SubForm.pgStatisticalAnalysis
 {

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using RightingSys.WinForm.AppPublic.Enum;
 using RightingSys.WinForm.AppPublic;
 using System.Threading;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Ribbon;
 using DevExpress.XtraBars.Helpers;
-using RightingSys.Models;
+using RightingSys.WinForm.Utils.clsInterface;
+using RightingSys.WinForm.Utils.clsEnum;
+using RightingSys.WinForm.Utils.cls;
 
 namespace RightingSys.WinForm
 {
-    public partial class MainForm :DevExpress.XtraBars.Ribbon.RibbonForm,AppPublic.Interface.IMainForm
+    public partial class MainForm :DevExpress.XtraBars.Ribbon.RibbonForm,IMainForm
     {
         public MainForm()
         {
@@ -94,7 +95,7 @@ namespace RightingSys.WinForm
                         form.Dispose();
                     }
                 }
-                string objectString =  appPublic.GetObjectString(FuncId);
+                string objectString = clsPublic.GetObjectString(FuncId);
                 if (!string.IsNullOrEmpty(objectString))
                 {
                     frm.sFuncId =Guid.Parse(objectString);
@@ -205,7 +206,7 @@ namespace RightingSys.WinForm
             }
             if (MainForm.ListUserFuntions == null)
             {
-                MainForm.ListUserFuntions = this.InitUserFunctionNew(appSession._SystemId, appSession._UserId, appSession._DepartmentId);
+                MainForm.ListUserFuntions = this.InitUserFunctionNew(clsSession._SystemId, clsSession._UserId, clsSession._DepartmentId);
             }
             return MainForm.ListUserFuntions.FirstOrDefault(s=>s.FunctionId==FuncId)!= null;
         }
@@ -290,7 +291,7 @@ namespace RightingSys.WinForm
             List<int> Opcodes = new List<int>();
             if (MainForm.ListUserFuntions == null)
             {
-                this.InitUserFunctionNew(appSession._SystemId, appSession._UserId, appSession._DepartmentId);
+                this.InitUserFunctionNew(clsSession._SystemId, clsSession._UserId, clsSession._DepartmentId);
             }
             Opcodes = MainForm.ListUserFuntions.FindAll(s => s.FunctionId == FuncId).Select(s => s.OpCode).ToList(); ;
             
@@ -759,19 +760,19 @@ namespace RightingSys.WinForm
         /// </summary>
         public void InitUserFuncNew()
         {
-            this.InitUserFunctionNew(appSession._SystemId, appSession._UserId, appSession._DepartmentId);
+            this.InitUserFunctionNew(clsSession._SystemId, clsSession._UserId, clsSession._DepartmentId);
         }
         private void Menu_Init()
         {
             base.Invoke(new EventHandler(delegate
             {
-                if (appSession._UserId != null && appSession._UserId != Guid.Empty)
+                if (clsSession._UserId != null && clsSession._UserId != Guid.Empty)
                 {
-                    this.StatusLoginName.Caption = "用户：" + appSession._LoginName;
+                    this.StatusLoginName.Caption = "用户：" + clsSession._LoginName;
                     this.statusLogintime.Caption = DateTime.Now.ToString("yyyy年MM月dd HH:mm:ss dddd");
-                    this.statusIP.Caption = "  登录IP：" + appSession._IPAddress;
-                    this.statusMac.Caption = "  登录MAC：" + appSession._MACAddress;
-                    this.statusFullName.Caption = "  真实姓名：" + appSession._FullName;
+                    this.statusIP.Caption = "  登录IP：" + clsSession._IPAddress;
+                    this.statusMac.Caption = "  登录MAC：" + clsSession._MACAddress;
+                    this.statusFullName.Caption = "  真实姓名：" + clsSession._FullName;
                     try
                     {
                         this.Menu_Visible();
@@ -779,7 +780,7 @@ namespace RightingSys.WinForm
                     }
                     catch (System.Exception ex)
                     {
-                       appPublic.ShowException(ex, this.Text);
+                        clsPublic.ShowException(ex, this.Text);
                     }
                 }
             }));
@@ -790,8 +791,8 @@ namespace RightingSys.WinForm
             {
                 this.StatusLoginName.Caption = "用户：未验证";
                 this.statusLogintime.Caption = DateTime.Now.ToString("yyyy年MM月dd HH:mm:ss dddd");
-                this.statusIP.Caption = "  登录IP：" + appSession._IPAddress;
-                this.statusMac.Caption = "  登录MAC：" + appSession._MACAddress;
+                this.statusIP.Caption = "  登录IP：" + clsSession._IPAddress;
+                this.statusMac.Caption = "  登录MAC：" + clsSession._MACAddress;
                 this.statusFullName.Caption = "  真实姓名：未验证";
                 foreach (RibbonPage ribbonPage in this.MainRibbon.Pages)
                 {
@@ -899,7 +900,7 @@ namespace RightingSys.WinForm
         #region  菜单栏方法
         private void btnAppExit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (!appPublic.GetMessageBoxYesNoResult("是否退出登录？", this.Text))
+            if (!clsPublic.GetMessageBoxYesNoResult("是否退出登录？", this.Text))
             {
                 return;
             }
@@ -913,13 +914,13 @@ namespace RightingSys.WinForm
                 this.FrmMain_Load(null, null);
                 return;
             }
-            if (!appPublic.GetMessageBoxYesNoResult("是否注销系统？", this.Text))
+            if (!clsPublic.GetMessageBoxYesNoResult("是否注销系统？", this.Text))
             {
                 return;
             }
            // appLogs.Add_LoginLog("用户注销");
             this.CloseAllWin();
-            appSession.SessionIntial();
+            clsSession.SessionIntial();
             this.Menu_Null();
             this.FrmMain_Load(null, null);
             this._LoginedIn = false;
@@ -985,7 +986,7 @@ namespace RightingSys.WinForm
         {
             string defaultSkinName = "Springtime";
             SkinHelper.InitSkinGallery(skinRibbon);
-            defaultSkinName = appIniConfig.ReadDefaultSkinName() == "" ? defaultSkinName : appIniConfig.ReadDefaultSkinName();
+            defaultSkinName = clsIniConfig.ReadDefaultSkinName() == "" ? defaultSkinName : clsIniConfig.ReadDefaultSkinName();
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle(defaultSkinName);//skinName为皮肤名 
             skinRibbon.Caption = "主题：" + defaultSkinName;
         }
@@ -995,7 +996,7 @@ namespace RightingSys.WinForm
             string caption = string.Empty;
             if (skinRibbon.Gallery == null) return;
             caption = skinRibbon.Gallery.GetCheckedItems()[0].Caption;//主题的描述
-            appIniConfig.WriteDefaultSkinName(caption);
+            clsIniConfig.WriteDefaultSkinName(caption);
             skinRibbon.Caption = "主题：" + caption + name;
         }
 

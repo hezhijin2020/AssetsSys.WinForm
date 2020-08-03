@@ -1,4 +1,4 @@
-﻿using RightingSys.WinForm.AppPublic.Enum;
+﻿using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -6,6 +6,7 @@ using System.Linq;
 using System.Drawing;
 using DevExpress.XtraReports.UI;
 using System.Data;
+using RightingSys.WinForm.Utils.cls;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
 {
@@ -19,7 +20,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
         {
             InitializeComponent();
             Checkday.EditValue = DateTime.Now;
-            txtOperatorName.Text = AppPublic.appSession._FullName;
+            txtOperatorName.Text = clsSession._FullName;
             Query();
 
         }
@@ -103,10 +104,10 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                         MessageBox.Show("盘点单未审核不能反审核"); return;
                     }
                     DataTable Dt = manager.GetAllTable(_model.Id);
-                    _model.OperatorId = AppPublic.appSession._UserId;
-                    _model.OperatorName = AppPublic.appSession._FullName;
+                    _model.OperatorId = clsSession._UserId;
+                    _model.OperatorName = clsSession._FullName;
                     string msg = string.Format("本次盘点资产{0}件，已盘{1}件，盘差{2}件 --- 是否反审核？", Dt.Rows.Count, Dt.Select("IsSelect=true").Length, Dt.Select("IsSelect=false").Length);
-                    if (AppPublic.appPublic.GetMessageBoxYesNoResult(msg))
+                    if (clsPublic.GetMessageBoxYesNoResult(msg,Text))
                     {
                         List<Models.ys_CheckOrderDeail> list = new List<Models.ys_CheckOrderDeail>();
 
@@ -165,8 +166,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
                 model.CheckNo = manager.GetNewCheckNo();
                 model.Checkday = Checkday.DateTime;
                 model.Description = txtDescription.Text;
-                model.OperatorId = AppPublic.appSession._UserId;
-                model.OperatorName = AppPublic.appSession._FullName;
+                model.OperatorId = clsSession._UserId;
+                model.OperatorName = clsSession._FullName;
                 model.IsAudit = false;
                 model.IsAuditday = DateTime.Parse("2020-01-01");
                 if (manager.AddNew(model))
@@ -183,8 +184,8 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
               
                 model.Checkday = Checkday.DateTime;
                 model.Description = txtDescription.Text;
-                model.OperatorId = AppPublic.appSession._UserId;
-                model.OperatorName = AppPublic.appSession._FullName;
+                model.OperatorId = clsSession._UserId;
+                model.OperatorName = clsSession._FullName;
                 if (manager.Modify(model))
                 {
                     MessageBox.Show("成功");

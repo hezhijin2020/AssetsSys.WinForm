@@ -1,10 +1,11 @@
 ﻿
 using RightingSys.WinForm.AppPublic;
-using RightingSys.WinForm.AppPublic.Enum;
 using DevExpress.XtraTreeList.Nodes;
 using System;
 using System.Data;
 using System.Windows.Forms;
+using RightingSys.WinForm.Utils.clsEnum;
+using RightingSys.WinForm.Utils.cls;
 
 namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
 {
@@ -100,11 +101,11 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                     return;
                 }
                 model.FuncName = txtName.Text.Trim();
-                model.ParentId = AppPublic.appPublic.GetObjGUID(tlPID.EditValue);
+                model.ParentId = clsPublic.GetObjGUID(tlPID.EditValue);
                 model.SortCode = txtSortCode.Text;
                 model.FuncHandle =Convert.ToInt32(txtFuncHandle.Tag);
-                model.SystemId = AppPublic.appPublic.GetObjGUID(dtAll.Select(String.Format("Id='{0}'",tlPID.EditValue))[0]["SystemId"]);
-                if (!AppPublic.appPublic.IsGuid(txtID.Text))
+                model.SystemId = clsPublic.GetObjGUID(dtAll.Select(String.Format("Id='{0}'",tlPID.EditValue))[0]["SystemId"]);
+                if (!clsPublic.IsGuid(txtID.Text))
                 {
                     model.Id = Guid.NewGuid();
                     if (funcManage.AddNew(model))
@@ -120,7 +121,7 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm.pageBaseinfo
                 }
                 else
                 {
-                    model.Id = AppPublic.appPublic.GetObjGUID(txtID.Text);
+                    model.Id = clsPublic.GetObjGUID(txtID.Text);
                     if (funcManage.Modify(model))
                     {
                         Query();

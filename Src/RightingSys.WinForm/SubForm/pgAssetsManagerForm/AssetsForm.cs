@@ -1,5 +1,6 @@
 ﻿
-using RightingSys.WinForm.AppPublic.Enum;
+using RightingSys.WinForm.Utils.cls;
+using RightingSys.WinForm.Utils.clsEnum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,10 +51,10 @@ namespace RightingSys.WinForm.SubForm.pgAssetsManagerForm
             object obID = gvData.GetFocusedRowCellValue("Id");
             if (obID != null && gvData.GetFocusedRowCellValue("StatusName").ToString() == "闲置")
             {
-                if (assetsManager.Delete(AppPublic.appPublic.GetObjGUID(obID)))
+                if (assetsManager.Delete(clsPublic.GetObjGUID(obID)))
                 {
                     Query();
-                    AppPublic.appPublic.ShowMessage("成功", Text);
+                    clsPublic.ShowMessage("成功", Text);
                 }
             }
         }
